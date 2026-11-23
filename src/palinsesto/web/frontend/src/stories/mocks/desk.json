@@ -1,0 +1,2248 @@
+{
+  "artists": {
+    "2abf29a8-9535-57a2-b2e2-b6492d6fa587": {
+      "id": "2abf29a8-9535-57a2-b2e2-b6492d6fa587",
+      "name": "Floating Points",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:artist:DCDK9Q3qtQvMRexIjQdSDG",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "c3990766-96f9-5e96-bf68-46c61dfe8288": {
+      "id": "c3990766-96f9-5e96-bf68-46c61dfe8288",
+      "name": "Turnstile",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:artist:lQ7Odknmh83oBCpw3qXIRI",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "1f15aac4-2560-54f4-9414-5ae0a0970121": {
+      "id": "1f15aac4-2560-54f4-9414-5ae0a0970121",
+      "name": "Bon Iver",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:artist:DmJExezc7AT4P2h2NilkTg",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "565029ed-4ca8-5443-b50f-62a359b5c470": {
+      "id": "565029ed-4ca8-5443-b50f-62a359b5c470",
+      "name": "Japanese Breakfast",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:artist:4DCD4VsPO7gzmlG5Eh4hsn",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "ca86763e-f2a1-54d2-b754-50287fe6a51e": {
+      "id": "ca86763e-f2a1-54d2-b754-50287fe6a51e",
+      "name": "Little Simz",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:artist:fcdKhEZkpa18PExgxOViPO",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "99f3860c-3f60-5e68-9b26-2cf42aba2eb2": {
+      "id": "99f3860c-3f60-5e68-9b26-2cf42aba2eb2",
+      "name": "Nala Sinephro",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:artist:aTC76F67ER4LMJSl25M3qd",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "69bd9b98-ed61-5f6b-bca6-ae389dba69c5": {
+      "id": "69bd9b98-ed61-5f6b-bca6-ae389dba69c5",
+      "name": "Mk.gee",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:artist:QdgtwBYJIXsT69Gh8haB65",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "5eeede1b-8c42-57f6-8aa6-a334dca1706b": {
+      "id": "5eeede1b-8c42-57f6-8aa6-a334dca1706b",
+      "name": "Jessica Pratt",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:artist:7MFitGlUFctqXYJatG54pM",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "ef7200b8-ad84-5b72-bf1b-20c3183ff950": {
+      "id": "ef7200b8-ad84-5b72-bf1b-20c3183ff950",
+      "name": "Ichiko Aoba",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:artist:SjgH8vc1It65IT6fuRIFQN",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "d2a50174-aa2f-51b4-acf4-d46c33b80904": {
+      "id": "d2a50174-aa2f-51b4-acf4-d46c33b80904",
+      "name": "Cleo Sol",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:artist:ByR4pAJ2daDGxI3e72Rarg",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "91650814-8757-5695-80a8-c0baec4db1e1": {
+      "id": "91650814-8757-5695-80a8-c0baec4db1e1",
+      "name": "Alice Coltrane",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:artist:4HMDoLK5SDipyVApYdkJWt",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "4d5892f7-6b86-5430-9220-acab4d5ea9a3": {
+      "id": "4d5892f7-6b86-5430-9220-acab4d5ea9a3",
+      "name": "Sade",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:artist:w3mtGPYRYvs1ebezCJyhSR",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "9af44d3b-a17c-5e50-a7da-5fe26e239570": {
+      "id": "9af44d3b-a17c-5e50-a7da-5fe26e239570",
+      "name": "Talk Talk",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:artist:EfGBQfYNoDu7g3Cz0HmFQb",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "7c991391-0510-5830-bd4f-e443b75fddf3": {
+      "id": "7c991391-0510-5830-bd4f-e443b75fddf3",
+      "name": "Boards of Canada",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:artist:pcFeBIfknYBA7qbiBGFIjK",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "05a440d6-90fd-5820-8bab-ac7023f086da": {
+      "id": "05a440d6-90fd-5820-8bab-ac7023f086da",
+      "name": "Television",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:artist:TghmRS1cjOtwxixCd0NY5k",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "54cdb4f0-3b38-5878-aeda-7ec783c6058b": {
+      "id": "54cdb4f0-3b38-5878-aeda-7ec783c6058b",
+      "name": "Pharoah Sanders",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:artist:9CTeNYtUja14DWT4vgtKzw",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "36ac7e08-8578-5c2f-8b12-d0c4cb8c7707": {
+      "id": "36ac7e08-8578-5c2f-8b12-d0c4cb8c7707",
+      "name": "London Symphony Orchestra",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:artist:ZsXURwrGDCnsxY98LIp6DU",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "0bb8ebbe-1198-5e68-b4c8-de0e7efff59d": {
+      "id": "0bb8ebbe-1198-5e68-b4c8-de0e7efff59d",
+      "name": "Khruangbin",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:artist:KhsjSNyTKfmpi16tsbEdin",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "fd8ccf7e-b9f2-5185-a29b-d2e8fbac9904": {
+      "id": "fd8ccf7e-b9f2-5185-a29b-d2e8fbac9904",
+      "name": "Kelela",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:artist:7O3kz0LInshAFyD4HIbmdg",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "c07a8bfa-c0ee-5680-9a50-5570a6e72133": {
+      "id": "c07a8bfa-c0ee-5680-9a50-5570a6e72133",
+      "name": "Big Thief",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:artist:0rqX4bg3yFW14BkBK5WfM5",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "783af33d-9200-5137-8de2-a33e8ad29526": {
+      "id": "783af33d-9200-5137-8de2-a33e8ad29526",
+      "name": "Steely Dan",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:artist:p4zcBGb6DwZEJCHI3CdEz4",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "e275eba5-6a42-519d-91c5-b76e4e886f5a": {
+      "id": "e275eba5-6a42-519d-91c5-b76e4e886f5a",
+      "name": "Radiohead",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:artist:Kpk78BEpQpi32bi7ypqXiH",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "1d85c881-6482-538f-a940-6f8776df0073": {
+      "id": "1d85c881-6482-538f-a940-6f8776df0073",
+      "name": "J Dilla",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:artist:wD65GxIrOHGtYD67WREvY3",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "351d36d9-62b6-590e-aa7a-295dffad1872": {
+      "id": "351d36d9-62b6-590e-aa7a-295dffad1872",
+      "name": "Joni Mitchell",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:artist:2PIjEDK501SdsHojy3YVkV",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "b6adae78-3b37-50f9-83a4-6005a03e9ece": {
+      "id": "b6adae78-3b37-50f9-83a4-6005a03e9ece",
+      "name": "Fontaines D.C.",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:artist:oBapG72D4pcpWjYHs5UJCv",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "04d8bce2-f043-5d20-8d76-257d52f746bc": {
+      "id": "04d8bce2-f043-5d20-8d76-257d52f746bc",
+      "name": "Wilco",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:artist:PAjU9Gpc96ns7yDMTILe12",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "ec77de8b-963d-5d28-a264-0ff45bbe02f5": {
+      "id": "ec77de8b-963d-5d28-a264-0ff45bbe02f5",
+      "name": "The Avalanches",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:artist:PelSFuLMfAd05SRq98xsrU",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "db0f7eab-9541-5ddd-b302-d60dccce97d9": {
+      "id": "db0f7eab-9541-5ddd-b302-d60dccce97d9",
+      "name": "John Coltrane",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:artist:ZGpwZ6p8lWnsBiF4hCvY3q",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "12e42907-a994-53d1-a763-47733aaa04ed": {
+      "id": "12e42907-a994-53d1-a763-47733aaa04ed",
+      "name": "Burial",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:artist:WrWRCXWXa1szklEDeZuXUN",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "3b82f8f3-c61f-59be-95a6-bfb4144cbc2c": {
+      "id": "3b82f8f3-c61f-59be-95a6-bfb4144cbc2c",
+      "name": "Slowdive",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:artist:IhmJofAViT8BYNGD0nyLit",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "977155e6-44fd-5f60-9986-cbd2fab205ad": {
+      "id": "977155e6-44fd-5f60-9986-cbd2fab205ad",
+      "name": "Kendrick Lamar",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:artist:QTkpCJy7yJSxeN4vSbKXYL",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "86fc28bd-746f-5007-8571-919d48601454": {
+      "id": "86fc28bd-746f-5007-8571-919d48601454",
+      "name": "Aphex Twin",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:artist:AZEP6tOD0H0rsLgR0leliF",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "5170e09f-6803-53c3-8a01-5dacce69edba": {
+      "id": "5170e09f-6803-53c3-8a01-5dacce69edba",
+      "name": "Wednesday",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:artist:X2J4rGnmTaJWNkXKPavArU",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "3ef65ff1-ffbb-561d-ac79-b8eb34397d54": {
+      "id": "3ef65ff1-ffbb-561d-ac79-b8eb34397d54",
+      "name": "Jon Hopkins",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:artist:JwhsJiHwVQpgbWLgfMz8z4",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "8d089e9e-2995-5e4c-8dda-7c61c41ff5d2": {
+      "id": "8d089e9e-2995-5e4c-8dda-7c61c41ff5d2",
+      "name": "Nick Drake",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:artist:OnKDMjEPara3crep0fK9gR",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "e3f16bc6-2a7a-5ae0-af0e-af37a17658ad": {
+      "id": "e3f16bc6-2a7a-5ae0-af0e-af37a17658ad",
+      "name": "Brian Eno",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:artist:GPy9G9yvQ7cPsbgpETMRkj",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "2a374821-6321-50e6-bd99-64e17bcf915c": {
+      "id": "2a374821-6321-50e6-bd99-64e17bcf915c",
+      "name": "Madvillain",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:artist:gpgtePcva5aLG5OFcJavoT",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "7dfc8021-bef3-5c4b-bb25-5e0ed63f1f10": {
+      "id": "7dfc8021-bef3-5c4b-bb25-5e0ed63f1f10",
+      "name": "Adrianne Lenker",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:artist:3y16xUZOBqZmVcZaXg7wRA",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "c02fc834-7d5d-595d-9ec9-c24f61e6331d": {
+      "id": "c02fc834-7d5d-595d-9ec9-c24f61e6331d",
+      "name": "Four Tet",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:artist:pM96jMBotQ9w7wPwNonwhi",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "d77362fd-2cb2-529d-b39d-8042430c0da2": {
+      "id": "d77362fd-2cb2-529d-b39d-8042430c0da2",
+      "name": "Yussef Dayes",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:artist:H2JUhQz49wV2dCXKJWri1Y",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "d33126f4-b931-5be1-ba9d-98e1fefd9871": {
+      "id": "d33126f4-b931-5be1-ba9d-98e1fefd9871",
+      "name": "Erykah Badu",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:artist:uxExiVcfchiPkr0DO5cXWr",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "301abf03-7d00-5bb6-8a06-77e94b701691": {
+      "id": "301abf03-7d00-5bb6-8a06-77e94b701691",
+      "name": "Hiroshi Yoshimura",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:artist:fIP652hoto3ixiTiD8bQBi",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "e8496a46-0ffb-560d-a7c3-1b6052c11f7c": {
+      "id": "e8496a46-0ffb-560d-a7c3-1b6052c11f7c",
+      "name": "Frank Ocean",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:artist:Y7k3odsxW7WJepeT4jEFMn",
+          "matched_by": "import"
+        }
+      ]
+    }
+  },
+  "albums": {
+    "22160053-b9b1-5eed-bcf8-b114315569c0": {
+      "id": "22160053-b9b1-5eed-bcf8-b114315569c0",
+      "title": "Cascade",
+      "artist_ids": ["2abf29a8-9535-57a2-b2e2-b6492d6fa587"],
+      "released": "2026-11-13",
+      "label": "Ninja Tune",
+      "tracks": 9,
+      "seconds": 2835,
+      "genre": "electronic",
+      "upc": "000170209365",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:iZwhuVGFwDYFcLK7WJ47cz",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "e6aee2b5-468e-5454-b28c-c369785c7436": {
+      "id": "e6aee2b5-468e-5454-b28c-c369785c7436",
+      "title": "Never Enough",
+      "artist_ids": ["c3990766-96f9-5e96-bf68-46c61dfe8288"],
+      "released": "2026-11-06",
+      "label": "Roadrunner",
+      "tracks": 14,
+      "seconds": 2599,
+      "genre": "rock",
+      "upc": "000694285536",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:FcHKlyPmdILqLwb81iRy36",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "21825746-d4c7-52f8-aabe-97b2eea90fc2": {
+      "id": "21825746-d4c7-52f8-aabe-97b2eea90fc2",
+      "title": "SABLE, fABLE",
+      "artist_ids": ["1f15aac4-2560-54f4-9414-5ae0a0970121"],
+      "released": "2026-11-13",
+      "label": "Jagjaguwar",
+      "tracks": 13,
+      "seconds": 2512,
+      "genre": "folk",
+      "upc": "000030747029",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:uz0xuRCFOJEJidGvs9alCv",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "cd6b945c-33f9-58bc-8d14-2efc1e591afc": {
+      "id": "cd6b945c-33f9-58bc-8d14-2efc1e591afc",
+      "title": "For Melancholy Brunettes (& sad women)",
+      "artist_ids": ["565029ed-4ca8-5443-b50f-62a359b5c470"],
+      "released": "2026-10-30",
+      "label": "Dead Oceans",
+      "tracks": 10,
+      "seconds": 1891,
+      "genre": "rock",
+      "upc": "002188503601",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:uhuBKNehorE9KdK1AhqxK9",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "c5e6050b-48e1-5373-99f7-4f1c8fa1945e": {
+      "id": "c5e6050b-48e1-5373-99f7-4f1c8fa1945e",
+      "title": "Lotus",
+      "artist_ids": ["ca86763e-f2a1-54d2-b754-50287fe6a51e"],
+      "released": "2026-11-06",
+      "label": "AWAL",
+      "tracks": 13,
+      "seconds": 3252,
+      "genre": "hiphop",
+      "upc": "001582921756",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:REjAX6vYZ0t6puNwh2puTK",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "57a0d087-9617-5466-b31e-76dde955248d": {
+      "id": "57a0d087-9617-5466-b31e-76dde955248d",
+      "title": "Endlessness",
+      "artist_ids": ["99f3860c-3f60-5e68-9b26-2cf42aba2eb2"],
+      "released": "2024-09-06",
+      "label": "Warp",
+      "tracks": 10,
+      "seconds": 2770,
+      "genre": "jazz",
+      "upc": "003797840980",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "bandcamp",
+          "ref": "nalasinephro.bandcamp.com/album/endlessness",
+          "matched_by": "manual"
+        },
+        {
+          "service": "spotify",
+          "ref": "spotify:album:l6vcTQh89aLQNAHCDcTMb8",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "12388e8e-6514-5eea-bc92-8aa9d5157406": {
+      "id": "12388e8e-6514-5eea-bc92-8aa9d5157406",
+      "title": "Two Star & the Dream Police",
+      "artist_ids": ["69bd9b98-ed61-5f6b-bca6-ae389dba69c5"],
+      "released": "2024-02-02",
+      "label": "R&R",
+      "tracks": 12,
+      "seconds": 2187,
+      "genre": "rnb",
+      "upc": "000276590132",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:DAzEHM9kFQteZyBk5mBqja",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "099422fb-6531-5a20-b5d4-aabb4b6d93a2": {
+      "id": "099422fb-6531-5a20-b5d4-aabb4b6d93a2",
+      "title": "Here in the Pitch",
+      "artist_ids": ["5eeede1b-8c42-57f6-8aa6-a334dca1706b"],
+      "released": "2024-05-03",
+      "label": "Mexican Summer",
+      "tracks": 9,
+      "seconds": 1675,
+      "genre": "folk",
+      "upc": "001372349584",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:3aZW1uTu3eXglyVi70rmP6",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "c511e187-8a23-50b3-97a5-928923450272": {
+      "id": "c511e187-8a23-50b3-97a5-928923450272",
+      "title": "Windswept Adan",
+      "artist_ids": ["ef7200b8-ad84-5b72-bf1b-20c3183ff950"],
+      "released": "2020-12-02",
+      "label": "Hermine",
+      "tracks": 12,
+      "seconds": 3001,
+      "genre": "ambient",
+      "upc": "002022868981",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:ylWDgV0zKBSJqpMV4ROfSd",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "261fe5b8-8f6f-55d9-8a83-eb042691d37d": {
+      "id": "261fe5b8-8f6f-55d9-8a83-eb042691d37d",
+      "title": "Mother",
+      "artist_ids": ["d2a50174-aa2f-51b4-acf4-d46c33b80904"],
+      "released": "2021-08-20",
+      "label": "Forever Living Originals",
+      "tracks": 12,
+      "seconds": 3006,
+      "genre": "rnb",
+      "upc": "000602134298",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:7YzI9UjwbAFcjO5cdsBINm",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "a3e0abf8-ac9d-549b-bf40-7f54a403821d": {
+      "id": "a3e0abf8-ac9d-549b-bf40-7f54a403821d",
+      "title": "Journey in Satchidananda",
+      "artist_ids": ["91650814-8757-5695-80a8-c0baec4db1e1"],
+      "released": "1971-02-01",
+      "label": "Impulse!",
+      "tracks": 5,
+      "seconds": 2224,
+      "genre": "jazz",
+      "upc": "001778013934",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:PYlwxM98jen8zytIFOnUZm",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "5681e59b-a062-5f19-a862-84aeb25e7ac7": {
+      "id": "5681e59b-a062-5f19-a862-84aeb25e7ac7",
+      "title": "Love Deluxe",
+      "artist_ids": ["4d5892f7-6b86-5430-9220-acab4d5ea9a3"],
+      "released": "1992-10-26",
+      "label": "Epic",
+      "tracks": 9,
+      "seconds": 2844,
+      "genre": "rnb",
+      "upc": "001562314819",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:UDETe7Ux21epkfG1gBaZU7",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "d7865237-0588-59d7-a558-546b9bdab685": {
+      "id": "d7865237-0588-59d7-a558-546b9bdab685",
+      "title": "Spirit of Eden",
+      "artist_ids": ["9af44d3b-a17c-5e50-a7da-5fe26e239570"],
+      "released": "1988-09-12",
+      "label": "Parlophone",
+      "tracks": 6,
+      "seconds": 2481,
+      "genre": "rock",
+      "upc": "002790145319",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:GlKruB0bQhqtUfyfaXavKh",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "014e8654-14d0-5796-862e-4e07a9ed70a6": {
+      "id": "014e8654-14d0-5796-862e-4e07a9ed70a6",
+      "title": "Music Has the Right to Children",
+      "artist_ids": ["7c991391-0510-5830-bd4f-e443b75fddf3"],
+      "released": "1998-04-20",
+      "label": "Warp",
+      "tracks": 18,
+      "seconds": 4257,
+      "genre": "electronic",
+      "upc": "002458413867",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:UngXAbQPodczyv4rErIZg1",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "1f151e20-87b6-50af-ae02-c39959f7d419": {
+      "id": "1f151e20-87b6-50af-ae02-c39959f7d419",
+      "title": "Marquee Moon",
+      "artist_ids": ["05a440d6-90fd-5820-8bab-ac7023f086da"],
+      "released": "1977-02-08",
+      "label": "Elektra",
+      "tracks": 8,
+      "seconds": 2755,
+      "genre": "rock",
+      "upc": "000561206623",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:sLUZwNcxihWhoZUpMBY5gR",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "c0d86a7f-456d-55c1-9dbb-7c110b3b03e7": {
+      "id": "c0d86a7f-456d-55c1-9dbb-7c110b3b03e7",
+      "title": "In Rainbows",
+      "artist_ids": ["e275eba5-6a42-519d-91c5-b76e4e886f5a"],
+      "released": "2007-10-10",
+      "label": "XL",
+      "tracks": 10,
+      "seconds": 2559,
+      "genre": "rock",
+      "upc": "004129810122",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:z2ZMF0JUFANAtkjwDiHipC",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "b38889d8-783e-5c06-8957-d675fc0ad937": {
+      "id": "b38889d8-783e-5c06-8957-d675fc0ad937",
+      "title": "Donuts",
+      "artist_ids": ["1d85c881-6482-538f-a940-6f8776df0073"],
+      "released": "2006-02-07",
+      "label": "Stones Throw",
+      "tracks": 31,
+      "seconds": 2590,
+      "genre": "hiphop",
+      "upc": "001608744052",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "bandcamp",
+          "ref": "jdilla.bandcamp.com/album/donuts",
+          "matched_by": "manual"
+        },
+        {
+          "service": "spotify",
+          "ref": "spotify:album:HWlM7WR6j8r4zg1OdstmF0",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "08fe643b-f27d-5c22-a023-c49f1b7a4795": {
+      "id": "08fe643b-f27d-5c22-a023-c49f1b7a4795",
+      "title": "Blue",
+      "artist_ids": ["351d36d9-62b6-590e-aa7a-295dffad1872"],
+      "released": "1971-06-22",
+      "label": "Reprise",
+      "tracks": 10,
+      "seconds": 2175,
+      "genre": "folk",
+      "upc": "002197550541",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:u1kD8rWBMzKzQdKxSz8zMx",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "d51dd886-b5c9-5576-a427-77f7688df07f": {
+      "id": "d51dd886-b5c9-5576-a427-77f7688df07f",
+      "title": "Romance",
+      "artist_ids": ["b6adae78-3b37-50f9-83a4-6005a03e9ece"],
+      "released": "2024-08-23",
+      "label": "XL",
+      "tracks": 11,
+      "seconds": 2246,
+      "genre": "rock",
+      "upc": "001939300242",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:ridIjgnapupG9cnQX6JQzm",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "40702c5f-cec9-5d82-a564-89e49d3e1f1c": {
+      "id": "40702c5f-cec9-5d82-a564-89e49d3e1f1c",
+      "title": "Yankee Hotel Foxtrot",
+      "artist_ids": ["04d8bce2-f043-5d20-8d76-257d52f746bc"],
+      "released": "2002-04-23",
+      "label": "Nonesuch",
+      "tracks": 11,
+      "seconds": 3104,
+      "genre": "rock",
+      "upc": "001639655926",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:1apYRArahkrAhazoFgvK7C",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "3c499f8d-475a-5744-b7f2-c0886f387cf2": {
+      "id": "3c499f8d-475a-5744-b7f2-c0886f387cf2",
+      "title": "Since I Left You",
+      "artist_ids": ["ec77de8b-963d-5d28-a264-0ff45bbe02f5"],
+      "released": "2000-11-27",
+      "label": "Modular",
+      "tracks": 18,
+      "seconds": 3624,
+      "genre": "electronic",
+      "upc": "002402599433",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:mv23GVEt4bkxK5o9KxgbE1",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "879ff22d-0f76-5916-94f2-cf390de088ad": {
+      "id": "879ff22d-0f76-5916-94f2-cf390de088ad",
+      "title": "A Love Supreme",
+      "artist_ids": ["db0f7eab-9541-5ddd-b302-d60dccce97d9"],
+      "released": "1965-01-01",
+      "label": "Impulse!",
+      "tracks": 4,
+      "seconds": 1967,
+      "genre": "jazz",
+      "upc": "004289400225",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:c1UnoJOB2zcjw7mh2FAd41",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "a2e6a675-2c31-5334-8230-3e014179c610": {
+      "id": "a2e6a675-2c31-5334-8230-3e014179c610",
+      "title": "Untrue",
+      "artist_ids": ["12e42907-a994-53d1-a763-47733aaa04ed"],
+      "released": "2007-11-05",
+      "label": "Hyperdub",
+      "tracks": 13,
+      "seconds": 3033,
+      "genre": "electronic",
+      "upc": "004088401350",
+      "image_url": null,
+      "note": "Night bus record. Best after midnight.",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:5Q3sbazAH8ZUxCf2hUZmDU",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "8307c3c6-cfca-57f7-9ab3-88b283f558a8": {
+      "id": "8307c3c6-cfca-57f7-9ab3-88b283f558a8",
+      "title": "Souvlaki",
+      "artist_ids": ["3b82f8f3-c61f-59be-95a6-bfb4144cbc2c"],
+      "released": "1993-05-17",
+      "label": "Creation",
+      "tracks": 10,
+      "seconds": 2423,
+      "genre": "rock",
+      "upc": "002192016927",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:Ml8tIHGH6bEZst4pGt2Pa3",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "d7728a68-07cb-5e24-b273-06d29f50fe9b": {
+      "id": "d7728a68-07cb-5e24-b273-06d29f50fe9b",
+      "title": "To Pimp a Butterfly",
+      "artist_ids": ["977155e6-44fd-5f60-9986-cbd2fab205ad"],
+      "released": "2015-03-15",
+      "label": "TDE",
+      "tracks": 16,
+      "seconds": 4731,
+      "genre": "hiphop",
+      "upc": "001336887630",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:XUjgfENizOHqnWhAZYJcfe",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "c12628bf-c802-5ee3-b59e-a83b54eb75a3": {
+      "id": "c12628bf-c802-5ee3-b59e-a83b54eb75a3",
+      "title": "Hejira",
+      "artist_ids": ["351d36d9-62b6-590e-aa7a-295dffad1872"],
+      "released": "1976-11-22",
+      "label": "Asylum",
+      "tracks": 9,
+      "seconds": 3117,
+      "genre": "folk",
+      "upc": "001428353994",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:Rory7wFarK3Uta1SvwHYJE",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "72538d92-7812-53af-9604-2affa5b4e8af": {
+      "id": "72538d92-7812-53af-9604-2affa5b4e8af",
+      "title": "Selected Ambient Works 85-92",
+      "artist_ids": ["86fc28bd-746f-5007-8571-919d48601454"],
+      "released": "1992-11-09",
+      "label": "Apollo",
+      "tracks": 13,
+      "seconds": 4468,
+      "genre": "ambient",
+      "upc": "001403605550",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:lWHororUdiV6FeXuLOT4Jw",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "f50b9ef7-cdf8-5d60-b208-a2281d741c65": {
+      "id": "f50b9ef7-cdf8-5d60-b208-a2281d741c65",
+      "title": "Rat Saw God",
+      "artist_ids": ["5170e09f-6803-53c3-8a01-5dacce69edba"],
+      "released": "2023-04-07",
+      "label": "Dead Oceans",
+      "tracks": 10,
+      "seconds": 2507,
+      "genre": "rock",
+      "upc": "001603297651",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:UpkzS3QpktcDKxU9AlStyb",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "65b76cfb-153d-57b5-9f89-530957d9f39b": {
+      "id": "65b76cfb-153d-57b5-9f89-530957d9f39b",
+      "title": "Immunity",
+      "artist_ids": ["3ef65ff1-ffbb-561d-ac79-b8eb34397d54"],
+      "released": "2013-06-03",
+      "label": "Domino",
+      "tracks": 8,
+      "seconds": 3616,
+      "genre": "electronic",
+      "upc": "001713374871",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:APcTkdEREPyB47qhepWvC3",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "d86ea462-3416-5e4c-b6dd-b7f55504bb33": {
+      "id": "d86ea462-3416-5e4c-b6dd-b7f55504bb33",
+      "title": "Pink Moon",
+      "artist_ids": ["8d089e9e-2995-5e4c-8dda-7c61c41ff5d2"],
+      "released": "1972-02-25",
+      "label": "Island",
+      "tracks": 11,
+      "seconds": 1702,
+      "genre": "folk",
+      "upc": "003461840689",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:WfgxGn6x6ZYlsdsXefWJy3",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "030872e1-c302-5f8d-bdc3-515588e4a320": {
+      "id": "030872e1-c302-5f8d-bdc3-515588e4a320",
+      "title": "Ambient 1: Music for Airports",
+      "artist_ids": ["e3f16bc6-2a7a-5ae0-af0e-af37a17658ad"],
+      "released": "1978-03-01",
+      "label": "Polydor",
+      "tracks": 4,
+      "seconds": 2889,
+      "genre": "ambient",
+      "upc": "003539695353",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:irIfK7wT41IvorClqDkRmx",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "ba7e3742-1e1f-5613-b572-9aeb672a9ea0": {
+      "id": "ba7e3742-1e1f-5613-b572-9aeb672a9ea0",
+      "title": "Madvillainy",
+      "artist_ids": ["2a374821-6321-50e6-bd99-64e17bcf915c"],
+      "released": "2004-03-23",
+      "label": "Stones Throw",
+      "tracks": 22,
+      "seconds": 2784,
+      "genre": "hiphop",
+      "upc": "002009749835",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "bandcamp",
+          "ref": "madvillain.bandcamp.com/album/madvillainy",
+          "matched_by": "manual"
+        },
+        {
+          "service": "spotify",
+          "ref": "spotify:album:4dwlqLK7knIJwZ0V6hajAL",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "17c90582-1694-5711-a4f2-f88ecab3d014": {
+      "id": "17c90582-1694-5711-a4f2-f88ecab3d014",
+      "title": "Thembi",
+      "artist_ids": ["54cdb4f0-3b38-5878-aeda-7ec783c6058b"],
+      "released": "1971-01-01",
+      "label": "Impulse!",
+      "tracks": 6,
+      "seconds": 2412,
+      "genre": "jazz",
+      "upc": "002426867726",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:RkbETyv2lij61cN81u14tq",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "e1d87db1-7076-588d-ad14-41dca3b7a625": {
+      "id": "e1d87db1-7076-588d-ad14-41dca3b7a625",
+      "title": "Take Me Apart",
+      "artist_ids": ["fd8ccf7e-b9f2-5185-a29b-d2e8fbac9904"],
+      "released": "2017-10-06",
+      "label": "Warp",
+      "tracks": 14,
+      "seconds": 3368,
+      "genre": "rnb",
+      "upc": "003248233656",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:XAzMvOhavi1iPUxozEpSZS",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "f792a907-ade7-5f74-8ee4-635146d58080": {
+      "id": "f792a907-ade7-5f74-8ee4-635146d58080",
+      "title": "Aja",
+      "artist_ids": ["783af33d-9200-5137-8de2-a33e8ad29526"],
+      "released": "1977-09-23",
+      "label": "ABC",
+      "tracks": 7,
+      "seconds": 2398,
+      "genre": "rock",
+      "upc": "000741637545",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:qLUlY7UPeJCh2PgHWfWzmx",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "9cd7ad0d-72b2-5039-83ad-6e148a1b1b8d": {
+      "id": "9cd7ad0d-72b2-5039-83ad-6e148a1b1b8d",
+      "title": "Bright Future",
+      "artist_ids": ["7dfc8021-bef3-5c4b-bb25-5e0ed63f1f10"],
+      "released": "2024-03-22",
+      "label": "4AD",
+      "tracks": 12,
+      "seconds": 2567,
+      "genre": "folk",
+      "upc": "002184344231",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:CH2ReNEduB0xQpqtKJ4PCl",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "268c9365-2613-5059-aaa4-0cce6752c148": {
+      "id": "268c9365-2613-5059-aaa4-0cce6752c148",
+      "title": "Three",
+      "artist_ids": ["c02fc834-7d5d-595d-9ec9-c24f61e6331d"],
+      "released": "2024-03-15",
+      "label": "Text",
+      "tracks": 8,
+      "seconds": 2614,
+      "genre": "electronic",
+      "upc": "002290484163",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:2TiHOxaHSZe1cNUVKrcH6h",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "fc952c0c-a4ac-55c9-ae67-13bee0416fcf": {
+      "id": "fc952c0c-a4ac-55c9-ae67-13bee0416fcf",
+      "title": "Con Todo El Mundo",
+      "artist_ids": ["0bb8ebbe-1198-5e68-b4c8-de0e7efff59d"],
+      "released": "2018-01-26",
+      "label": "Dead Oceans",
+      "tracks": 10,
+      "seconds": 2316,
+      "genre": "rnb",
+      "upc": "002889664578",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:LepijInqH8vybOhuL6Nul8",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "0704f7e0-82cc-5c4f-b3a5-43160ac8e835": {
+      "id": "0704f7e0-82cc-5c4f-b3a5-43160ac8e835",
+      "title": "Black Classical Music",
+      "artist_ids": ["d77362fd-2cb2-529d-b39d-8042430c0da2"],
+      "released": "2023-09-08",
+      "label": "Brownswood",
+      "tracks": 19,
+      "seconds": 4303,
+      "genre": "jazz",
+      "upc": "002356896824",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:3yhKBwziTmH6zyt8DiJqTa",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "bf46f58e-c130-5a7d-9242-65b45db94eea": {
+      "id": "bf46f58e-c130-5a7d-9242-65b45db94eea",
+      "title": "Capacity",
+      "artist_ids": ["c07a8bfa-c0ee-5680-9a50-5570a6e72133"],
+      "released": "2017-06-09",
+      "label": "Saddle Creek",
+      "tracks": 11,
+      "seconds": 2475,
+      "genre": "folk",
+      "upc": "001780010889",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:cREBYZoRYJ8vaFgjETa9uT",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "92bc54d2-a2d2-56be-a269-bdc64a2e8c97": {
+      "id": "92bc54d2-a2d2-56be-a269-bdc64a2e8c97",
+      "title": "Karma",
+      "artist_ids": ["54cdb4f0-3b38-5878-aeda-7ec783c6058b"],
+      "released": "1969-01-01",
+      "label": "Impulse!",
+      "tracks": 2,
+      "seconds": 2206,
+      "genre": "jazz",
+      "upc": "002399918791",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:GL8lsBWpoHATwReji3GpC1",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "114c4a11-a09f-5dbd-9e23-ffbb664e7e1b": {
+      "id": "114c4a11-a09f-5dbd-9e23-ffbb664e7e1b",
+      "title": "Mama's Gun",
+      "artist_ids": ["d33126f4-b931-5be1-ba9d-98e1fefd9871"],
+      "released": "2000-11-21",
+      "label": "Motown",
+      "tracks": 14,
+      "seconds": 4297,
+      "genre": "rnb",
+      "upc": "000345888281",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:Kxq9O72fqXKf8XmripYBar",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "9b19a112-1cab-5109-8106-b7b7a5b8893f": {
+      "id": "9b19a112-1cab-5109-8106-b7b7a5b8893f",
+      "title": "Music for Nine Post Cards",
+      "artist_ids": ["301abf03-7d00-5bb6-8a06-77e94b701691"],
+      "released": "1982-01-01",
+      "label": "Sound Process",
+      "tracks": 9,
+      "seconds": 2371,
+      "genre": "ambient",
+      "upc": "000253995020",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:RE1SbmvozIPclKz4fqxEzC",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "f9eecee1-f3f3-5e5e-97f9-ae05fd205d83": {
+      "id": "f9eecee1-f3f3-5e5e-97f9-ae05fd205d83",
+      "title": "Blonde",
+      "artist_ids": ["e8496a46-0ffb-560d-a7c3-1b6052c11f7c"],
+      "released": "2016-08-20",
+      "label": "Boys Don't Cry",
+      "tracks": 17,
+      "seconds": 3608,
+      "genre": "rnb",
+      "upc": "002210426329",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:YjofU7SZeDKhaROxsDClMt",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "a052fb25-a64b-5942-ab04-9295940630d1": {
+      "id": "a052fb25-a64b-5942-ab04-9295940630d1",
+      "title": "Promises",
+      "artist_ids": [
+        "2abf29a8-9535-57a2-b2e2-b6492d6fa587",
+        "54cdb4f0-3b38-5878-aeda-7ec783c6058b",
+        "36ac7e08-8578-5c2f-8b12-d0c4cb8c7707"
+      ],
+      "released": "2021-03-26",
+      "label": "Luaka Bop",
+      "tracks": 9,
+      "seconds": 2753,
+      "genre": "jazz",
+      "upc": "003701741603",
+      "image_url": null,
+      "note": "Movement 6 is the one. Play it loud.",
+      "links": [
+        {
+          "service": "bandcamp",
+          "ref": "luakabop.bandcamp.com/album/promises",
+          "matched_by": "manual"
+        },
+        {
+          "service": "spotify",
+          "ref": "spotify:album:8bSB4hyDEbkpMfCJyvwZKP",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "c7ea30b9-a895-514a-92c7-487bb05f28ef": {
+      "id": "c7ea30b9-a895-514a-92c7-487bb05f28ef",
+      "title": "Jewels of Thought",
+      "artist_ids": ["54cdb4f0-3b38-5878-aeda-7ec783c6058b"],
+      "released": "1970-01-01",
+      "label": "Impulse!",
+      "tracks": 2,
+      "seconds": 2496,
+      "genre": "jazz",
+      "upc": "000998382589",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:O7uHUdedkzofSdaVURC16N",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "88a1738a-4df9-56d3-821a-a0d85b0162fe": {
+      "id": "88a1738a-4df9-56d3-821a-a0d85b0162fe",
+      "title": "A La Sala",
+      "artist_ids": ["0bb8ebbe-1198-5e68-b4c8-de0e7efff59d"],
+      "released": "2024-04-05",
+      "label": "Dead Oceans",
+      "tracks": 12,
+      "seconds": 2658,
+      "genre": "rnb",
+      "upc": "004270940428",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:l4523CPgZubQ7mrUl4L8fQ",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "88f1e68f-4d5e-59e4-8333-db9b3a62649f": {
+      "id": "88f1e68f-4d5e-59e4-8333-db9b3a62649f",
+      "title": "Mordechai",
+      "artist_ids": ["0bb8ebbe-1198-5e68-b4c8-de0e7efff59d"],
+      "released": "2020-06-26",
+      "label": "Dead Oceans",
+      "tracks": 10,
+      "seconds": 2512,
+      "genre": "rnb",
+      "upc": "004205988683",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:8tEXszsvuhMPyPYfCh6xM7",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "f5c7dad6-c10e-51da-a954-f79ac9d2a0c8": {
+      "id": "f5c7dad6-c10e-51da-a954-f79ac9d2a0c8",
+      "title": "Raven",
+      "artist_ids": ["fd8ccf7e-b9f2-5185-a29b-d2e8fbac9904"],
+      "released": "2023-02-10",
+      "label": "Warp",
+      "tracks": 15,
+      "seconds": 3311,
+      "genre": "rnb",
+      "upc": "002605297181",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:CnIPg1yp8lUt4Lol43Gdmn",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "5f3b1815-41e9-5007-8a98-209d9f3f6783": {
+      "id": "5f3b1815-41e9-5007-8a98-209d9f3f6783",
+      "title": "Dragon New Mountain I Believe in You",
+      "artist_ids": ["c07a8bfa-c0ee-5680-9a50-5570a6e72133"],
+      "released": "2022-02-11",
+      "label": "4AD",
+      "tracks": 20,
+      "seconds": 4788,
+      "genre": "folk",
+      "upc": "004161811998",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:rY3qxMP4xunm72b0NsJwBy",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "73799409-96a2-5729-914a-ba7d93731e41": {
+      "id": "73799409-96a2-5729-914a-ba7d93731e41",
+      "title": "U.F.O.F.",
+      "artist_ids": ["c07a8bfa-c0ee-5680-9a50-5570a6e72133"],
+      "released": "2019-05-03",
+      "label": "4AD",
+      "tracks": 12,
+      "seconds": 2580,
+      "genre": "folk",
+      "upc": "002209083939",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:cN0HODqz4ZepWRGDeVgjKv",
+          "matched_by": "import"
+        }
+      ]
+    },
+    "2eb78d4a-8624-51a0-94ff-23cabb5ba6fc": {
+      "id": "2eb78d4a-8624-51a0-94ff-23cabb5ba6fc",
+      "title": "Gaucho",
+      "artist_ids": ["783af33d-9200-5137-8de2-a33e8ad29526"],
+      "released": "1980-11-21",
+      "label": "MCA",
+      "tracks": 7,
+      "seconds": 2321,
+      "genre": "rock",
+      "upc": "001521955252",
+      "image_url": null,
+      "note": "",
+      "links": [
+        {
+          "service": "spotify",
+          "ref": "spotify:album:107cjQv2Rofo9ipaxIxIPI",
+          "matched_by": "import"
+        }
+      ]
+    }
+  },
+  "weeks": [
+    {
+      "id": "687d8f2a-8ad7-54bc-8e5d-f1648045ba4c",
+      "starts_on": "2026-09-28",
+      "closed": true,
+      "sent": {
+        "at": "2026-09-28T09:00:00+00:00",
+        "tracks": 67,
+        "service": "spotify",
+        "left_out": 0,
+        "album_ids": [
+          "a3e0abf8-ac9d-549b-bf40-7f54a403821d",
+          "c0d86a7f-456d-55c1-9dbb-7c110b3b03e7",
+          "b38889d8-783e-5c06-8957-d675fc0ad937",
+          "08fe643b-f27d-5c22-a023-c49f1b7a4795",
+          "d51dd886-b5c9-5576-a427-77f7688df07f"
+        ],
+        "playlist_ref": "spotify:playlist:pKxUxonUHkvafOtQlINopa"
+      },
+      "skipped": [],
+      "entries": [
+        {
+          "album_id": "a3e0abf8-ac9d-549b-bf40-7f54a403821d",
+          "lane": "gold",
+          "reason": "A favourite you had not played in a while.",
+          "verdict": "heavy",
+          "note": ""
+        },
+        {
+          "album_id": "c0d86a7f-456d-55c1-9dbb-7c110b3b03e7",
+          "lane": "gold",
+          "reason": "A favourite you had not played in a while.",
+          "verdict": "heavy",
+          "note": ""
+        },
+        {
+          "album_id": "b38889d8-783e-5c06-8957-d675fc0ad937",
+          "lane": "gold",
+          "reason": "A favourite you had not played in a while.",
+          "verdict": "heavy",
+          "note": ""
+        },
+        {
+          "album_id": "08fe643b-f27d-5c22-a023-c49f1b7a4795",
+          "lane": "gold",
+          "reason": "A favourite you had not played in a while.",
+          "verdict": "heavy",
+          "note": ""
+        },
+        {
+          "album_id": "d51dd886-b5c9-5576-a427-77f7688df07f",
+          "lane": "current",
+          "reason": "New release from an artist you follow.",
+          "verdict": "pulled",
+          "note": "Too much like the last one."
+        }
+      ]
+    },
+    {
+      "id": "dbbc3763-3246-57c8-a421-4fbcef79a5e0",
+      "starts_on": "2026-10-05",
+      "closed": true,
+      "sent": {
+        "at": "2026-10-05T09:00:00+00:00",
+        "tracks": 60,
+        "service": "spotify",
+        "left_out": 0,
+        "album_ids": [
+          "5681e59b-a062-5f19-a862-84aeb25e7ac7",
+          "014e8654-14d0-5796-862e-4e07a9ed70a6",
+          "40702c5f-cec9-5d82-a564-89e49d3e1f1c",
+          "3c499f8d-475a-5744-b7f2-c0886f387cf2",
+          "879ff22d-0f76-5916-94f2-cf390de088ad"
+        ],
+        "playlist_ref": "spotify:playlist:4PANGZeRQZORuFsnALK5YP"
+      },
+      "skipped": [],
+      "entries": [
+        {
+          "album_id": "5681e59b-a062-5f19-a862-84aeb25e7ac7",
+          "lane": "gold",
+          "reason": "A favourite you had not played in a while.",
+          "verdict": "heavy",
+          "note": ""
+        },
+        {
+          "album_id": "014e8654-14d0-5796-862e-4e07a9ed70a6",
+          "lane": "gold",
+          "reason": "A favourite you had not played in a while.",
+          "verdict": "heavy",
+          "note": ""
+        },
+        {
+          "album_id": "40702c5f-cec9-5d82-a564-89e49d3e1f1c",
+          "lane": "gold",
+          "reason": "A favourite you had not played in a while.",
+          "verdict": "keep",
+          "note": ""
+        },
+        {
+          "album_id": "3c499f8d-475a-5744-b7f2-c0886f387cf2",
+          "lane": "gold",
+          "reason": "A favourite you had not played in a while.",
+          "verdict": "heavy",
+          "note": ""
+        },
+        {
+          "album_id": "879ff22d-0f76-5916-94f2-cf390de088ad",
+          "lane": "gold",
+          "reason": "A favourite you had not played in a while.",
+          "verdict": "heavy",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "5e155ef5-9b1a-5fb2-9cff-b94b78f7c6ce",
+      "starts_on": "2026-10-12",
+      "closed": true,
+      "sent": {
+        "at": "2026-10-12T09:00:00+00:00",
+        "tracks": 61,
+        "service": "spotify",
+        "left_out": 0,
+        "album_ids": [
+          "a2e6a675-2c31-5334-8230-3e014179c610",
+          "8307c3c6-cfca-57f7-9ab3-88b283f558a8",
+          "d7728a68-07cb-5e24-b273-06d29f50fe9b",
+          "c12628bf-c802-5ee3-b59e-a83b54eb75a3",
+          "72538d92-7812-53af-9604-2affa5b4e8af"
+        ],
+        "playlist_ref": "spotify:playlist:JUNGZGRSVKrE5ArAdKHMLE"
+      },
+      "skipped": [],
+      "entries": [
+        {
+          "album_id": "a2e6a675-2c31-5334-8230-3e014179c610",
+          "lane": "gold",
+          "reason": "A favourite you had not played in a while.",
+          "verdict": "heavy",
+          "note": ""
+        },
+        {
+          "album_id": "8307c3c6-cfca-57f7-9ab3-88b283f558a8",
+          "lane": "gold",
+          "reason": "A favourite you had not played in a while.",
+          "verdict": "heavy",
+          "note": ""
+        },
+        {
+          "album_id": "d7728a68-07cb-5e24-b273-06d29f50fe9b",
+          "lane": "gold",
+          "reason": "A favourite you had not played in a while.",
+          "verdict": "keep",
+          "note": ""
+        },
+        {
+          "album_id": "c12628bf-c802-5ee3-b59e-a83b54eb75a3",
+          "lane": "recurrent",
+          "reason": "More from an artist you kept in rotation.",
+          "verdict": "heavy",
+          "note": ""
+        },
+        {
+          "album_id": "72538d92-7812-53af-9604-2affa5b4e8af",
+          "lane": "gold",
+          "reason": "A favourite you had not played in a while.",
+          "verdict": "heavy",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "d5919cec-029e-5964-a105-abc8c16f3af0",
+      "starts_on": "2026-10-19",
+      "closed": true,
+      "sent": {
+        "at": "2026-10-19T09:00:00+00:00",
+        "tracks": 55,
+        "service": "spotify",
+        "left_out": 0,
+        "album_ids": [
+          "f50b9ef7-cdf8-5d60-b208-a2281d741c65",
+          "65b76cfb-153d-57b5-9f89-530957d9f39b",
+          "d86ea462-3416-5e4c-b6dd-b7f55504bb33",
+          "030872e1-c302-5f8d-bdc3-515588e4a320",
+          "ba7e3742-1e1f-5613-b572-9aeb672a9ea0"
+        ],
+        "playlist_ref": "spotify:playlist:YZa9sxIPa5K1K1mb2NAd43"
+      },
+      "skipped": [],
+      "entries": [
+        {
+          "album_id": "f50b9ef7-cdf8-5d60-b208-a2281d741c65",
+          "lane": "first",
+          "reason": "New to you.",
+          "verdict": "pulled",
+          "note": ""
+        },
+        {
+          "album_id": "65b76cfb-153d-57b5-9f89-530957d9f39b",
+          "lane": "first",
+          "reason": "New to you.",
+          "verdict": "pulled",
+          "note": "Fine, but never reached for it."
+        },
+        {
+          "album_id": "d86ea462-3416-5e4c-b6dd-b7f55504bb33",
+          "lane": "gold",
+          "reason": "A favourite you had not played in a while.",
+          "verdict": "heavy",
+          "note": ""
+        },
+        {
+          "album_id": "030872e1-c302-5f8d-bdc3-515588e4a320",
+          "lane": "gold",
+          "reason": "A favourite you had not played in a while.",
+          "verdict": "heavy",
+          "note": ""
+        },
+        {
+          "album_id": "ba7e3742-1e1f-5613-b572-9aeb672a9ea0",
+          "lane": "gold",
+          "reason": "A favourite you had not played in a while.",
+          "verdict": "heavy",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "db2218c1-1cef-5bb0-b300-43dd1e56ef9d",
+      "starts_on": "2026-10-26",
+      "closed": true,
+      "sent": {
+        "at": "2026-10-26T09:00:00+00:00",
+        "tracks": 47,
+        "service": "spotify",
+        "left_out": 0,
+        "album_ids": [
+          "17c90582-1694-5711-a4f2-f88ecab3d014",
+          "e1d87db1-7076-588d-ad14-41dca3b7a625",
+          "f792a907-ade7-5f74-8ee4-635146d58080",
+          "9cd7ad0d-72b2-5039-83ad-6e148a1b1b8d",
+          "268c9365-2613-5059-aaa4-0cce6752c148"
+        ],
+        "playlist_ref": "spotify:playlist:neny7e5MjqnsVslyVM7unw"
+      },
+      "skipped": [],
+      "entries": [
+        {
+          "album_id": "17c90582-1694-5711-a4f2-f88ecab3d014",
+          "lane": "first",
+          "reason": "New to you.",
+          "verdict": "keep",
+          "note": "Need the rest of the Impulse! years."
+        },
+        {
+          "album_id": "e1d87db1-7076-588d-ad14-41dca3b7a625",
+          "lane": "first",
+          "reason": "New to you.",
+          "verdict": "keep",
+          "note": ""
+        },
+        {
+          "album_id": "f792a907-ade7-5f74-8ee4-635146d58080",
+          "lane": "gold",
+          "reason": "A favourite you had not played in a while.",
+          "verdict": "keep",
+          "note": ""
+        },
+        {
+          "album_id": "9cd7ad0d-72b2-5039-83ad-6e148a1b1b8d",
+          "lane": "first",
+          "reason": "New to you.",
+          "verdict": "heavy",
+          "note": ""
+        },
+        {
+          "album_id": "268c9365-2613-5059-aaa4-0cce6752c148",
+          "lane": "current",
+          "reason": "New release from an artist you follow.",
+          "verdict": "heavy",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "4034e570-cb4f-53ce-b318-1a61c3f36b76",
+      "starts_on": "2026-11-02",
+      "closed": true,
+      "sent": {
+        "at": "2026-11-02T09:00:00+00:00",
+        "tracks": 56,
+        "service": "spotify",
+        "left_out": 0,
+        "album_ids": [
+          "fc952c0c-a4ac-55c9-ae67-13bee0416fcf",
+          "0704f7e0-82cc-5c4f-b3a5-43160ac8e835",
+          "f9eecee1-f3f3-5e5e-97f9-ae05fd205d83",
+          "88f1e68f-4d5e-59e4-8333-db9b3a62649f"
+        ],
+        "playlist_ref": "spotify:playlist:2jwrQLwNobGfgnkLuP4Bal"
+      },
+      "skipped": [],
+      "entries": [
+        {
+          "album_id": "fc952c0c-a4ac-55c9-ae67-13bee0416fcf",
+          "lane": "first",
+          "reason": "New to you.",
+          "verdict": "keep",
+          "note": ""
+        },
+        {
+          "album_id": "0704f7e0-82cc-5c4f-b3a5-43160ac8e835",
+          "lane": "first",
+          "reason": "New to you.",
+          "verdict": "heavy",
+          "note": ""
+        },
+        {
+          "album_id": "f9eecee1-f3f3-5e5e-97f9-ae05fd205d83",
+          "lane": "gold",
+          "reason": "A favourite you had not played in a while.",
+          "verdict": "heavy",
+          "note": ""
+        },
+        {
+          "album_id": "88f1e68f-4d5e-59e4-8333-db9b3a62649f",
+          "lane": "recurrent",
+          "reason": "More from an artist you kept in rotation.",
+          "verdict": null,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "c3c09aaf-91ac-591a-80e1-913f7e4b4155",
+      "starts_on": "2026-11-09",
+      "closed": true,
+      "sent": {
+        "at": "2026-11-09T09:00:00+00:00",
+        "tracks": 36,
+        "service": "spotify",
+        "left_out": 0,
+        "album_ids": [
+          "bf46f58e-c130-5a7d-9242-65b45db94eea",
+          "92bc54d2-a2d2-56be-a269-bdc64a2e8c97",
+          "114c4a11-a09f-5dbd-9e23-ffbb664e7e1b",
+          "9b19a112-1cab-5109-8106-b7b7a5b8893f"
+        ],
+        "playlist_ref": "spotify:playlist:Ho9kj2jKtQjSvejiNOxSJa"
+      },
+      "skipped": [],
+      "entries": [
+        {
+          "album_id": "bf46f58e-c130-5a7d-9242-65b45db94eea",
+          "lane": "first",
+          "reason": "New to you.",
+          "verdict": "keep",
+          "note": ""
+        },
+        {
+          "album_id": "92bc54d2-a2d2-56be-a269-bdc64a2e8c97",
+          "lane": "recurrent",
+          "reason": "More from an artist you kept in rotation.",
+          "verdict": "keep",
+          "note": ""
+        },
+        {
+          "album_id": "114c4a11-a09f-5dbd-9e23-ffbb664e7e1b",
+          "lane": "gold",
+          "reason": "A favourite you had not played in a while.",
+          "verdict": "heavy",
+          "note": ""
+        },
+        {
+          "album_id": "9b19a112-1cab-5109-8106-b7b7a5b8893f",
+          "lane": "first",
+          "reason": "New to you.",
+          "verdict": null,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "34d39b5d-9f50-55bc-9871-a7fbb79eaa02",
+      "starts_on": "2026-11-16",
+      "closed": false,
+      "sent": null,
+      "skipped": [],
+      "entries": [
+        {
+          "album_id": "a3e0abf8-ac9d-549b-bf40-7f54a403821d",
+          "lane": "gold",
+          "reason": "Heavy rotation in week 40. Off the log 7 weeks.",
+          "verdict": null,
+          "note": ""
+        },
+        {
+          "album_id": "22160053-b9b1-5eed-bcf8-b114315569c0",
+          "lane": "current",
+          "reason": "You follow Floating Points. Out 13 Nov.",
+          "verdict": null,
+          "note": ""
+        },
+        {
+          "album_id": "5681e59b-a062-5f19-a862-84aeb25e7ac7",
+          "lane": "gold",
+          "reason": "Heavy rotation in week 41. Off the log 6 weeks.",
+          "verdict": null,
+          "note": ""
+        },
+        {
+          "album_id": "57a0d087-9617-5466-b31e-76dde955248d",
+          "lane": "first",
+          "reason": "New to you. Found by searching spiritual jazz.",
+          "verdict": null,
+          "note": ""
+        },
+        {
+          "album_id": "a052fb25-a64b-5942-ab04-9295940630d1",
+          "lane": "recurrent",
+          "reason": "You kept Pharoah Sanders in rotation in week 46.",
+          "verdict": null,
+          "note": ""
+        },
+        {
+          "album_id": "d7865237-0588-59d7-a558-546b9bdab685",
+          "lane": "gold",
+          "reason": "Played 30 times in your history. Never logged.",
+          "verdict": null,
+          "note": ""
+        },
+        {
+          "album_id": "e6aee2b5-468e-5454-b28c-c369785c7436",
+          "lane": "current",
+          "reason": "In your top artists. Out 6 Nov.",
+          "verdict": null,
+          "note": ""
+        }
+      ]
+    }
+  ],
+  "signals": {
+    "synced_at": "2026-11-20T07:42:00+00:00",
+    "top_tracks": {
+      "014e8654-14d0-5796-862e-4e07a9ed70a6": 3,
+      "08fe643b-f27d-5c22-a023-c49f1b7a4795": 2,
+      "1f151e20-87b6-50af-ae02-c39959f7d419": 3,
+      "5681e59b-a062-5f19-a862-84aeb25e7ac7": 3,
+      "c0d86a7f-456d-55c1-9dbb-7c110b3b03e7": 4,
+      "d7865237-0588-59d7-a558-546b9bdab685": 2
+    },
+    "recent_tracks": {
+      "cd6b945c-33f9-58bc-8d14-2efc1e591afc": 14,
+      "e6aee2b5-468e-5454-b28c-c369785c7436": 9
+    },
+    "top_artist_ids": [
+      "c3990766-96f9-5e96-bf68-46c61dfe8288",
+      "565029ed-4ca8-5443-b50f-62a359b5c470",
+      "2abf29a8-9535-57a2-b2e2-b6492d6fa587",
+      "4d5892f7-6b86-5430-9220-acab4d5ea9a3",
+      "7c991391-0510-5830-bd4f-e443b75fddf3"
+    ],
+    "followed_artist_ids": [
+      "2abf29a8-9535-57a2-b2e2-b6492d6fa587",
+      "1f15aac4-2560-54f4-9414-5ae0a0970121",
+      "ca86763e-f2a1-54d2-b754-50287fe6a51e",
+      "c07a8bfa-c0ee-5680-9a50-5570a6e72133",
+      "0bb8ebbe-1198-5e68-b4c8-de0e7efff59d",
+      "fd8ccf7e-b9f2-5185-a29b-d2e8fbac9904"
+    ]
+  },
+  "policy": {
+    "min_hours": 4,
+    "max_hours": 8,
+    "min_currents": 2,
+    "min_first_plays": 1,
+    "min_gold": 1,
+    "max_genre_share": 0.4,
+    "no_repeat_artist": true,
+    "gold_cooldown_weeks": 6,
+    "current_window_days": 21
+  },
+  "current_week_id": "34d39b5d-9f50-55bc-9871-a7fbb79eaa02",
+  "week_numbers": {
+    "687d8f2a-8ad7-54bc-8e5d-f1648045ba4c": 40,
+    "dbbc3763-3246-57c8-a421-4fbcef79a5e0": 41,
+    "5e155ef5-9b1a-5fb2-9cff-b94b78f7c6ce": 42,
+    "d5919cec-029e-5964-a105-abc8c16f3af0": 43,
+    "db2218c1-1cef-5bb0-b300-43dd1e56ef9d": 44,
+    "4034e570-cb4f-53ce-b318-1a61c3f36b76": 45,
+    "c3c09aaf-91ac-591a-80e1-913f7e4b4155": 46,
+    "34d39b5d-9f50-55bc-9871-a7fbb79eaa02": 47
+  },
+  "candidates": [
+    {
+      "album_id": "5f3b1815-41e9-5007-8a98-209d9f3f6783",
+      "lane": "recurrent",
+      "reason": "You kept Big Thief in rotation in week 46.",
+      "rank": 739929
+    },
+    {
+      "album_id": "c7ea30b9-a895-514a-92c7-487bb05f28ef",
+      "lane": "recurrent",
+      "reason": "You kept Pharoah Sanders in rotation in week 46.",
+      "rank": 739929
+    },
+    {
+      "album_id": "a052fb25-a64b-5942-ab04-9295940630d1",
+      "lane": "recurrent",
+      "reason": "You kept Pharoah Sanders in rotation in week 46.",
+      "rank": 739929
+    },
+    {
+      "album_id": "73799409-96a2-5729-914a-ba7d93731e41",
+      "lane": "recurrent",
+      "reason": "You kept Big Thief in rotation in week 46.",
+      "rank": 739929
+    },
+    {
+      "album_id": "88a1738a-4df9-56d3-821a-a0d85b0162fe",
+      "lane": "recurrent",
+      "reason": "You kept Khruangbin in rotation in week 45.",
+      "rank": 739922
+    },
+    {
+      "album_id": "2eb78d4a-8624-51a0-94ff-23cabb5ba6fc",
+      "lane": "recurrent",
+      "reason": "You kept Steely Dan in rotation in week 44.",
+      "rank": 739915
+    },
+    {
+      "album_id": "f5c7dad6-c10e-51da-a954-f79ac9d2a0c8",
+      "lane": "recurrent",
+      "reason": "You kept Kelela in rotation in week 44.",
+      "rank": 739915
+    },
+    {
+      "album_id": "08fe643b-f27d-5c22-a023-c49f1b7a4795",
+      "lane": "gold",
+      "reason": "Heavy rotation in week 40. Off the log 7 weeks.",
+      "rank": 7
+    },
+    {
+      "album_id": "b38889d8-783e-5c06-8957-d675fc0ad937",
+      "lane": "gold",
+      "reason": "Heavy rotation in week 40. Off the log 7 weeks.",
+      "rank": 7
+    },
+    {
+      "album_id": "c0d86a7f-456d-55c1-9dbb-7c110b3b03e7",
+      "lane": "gold",
+      "reason": "Heavy rotation in week 40. Off the log 7 weeks.",
+      "rank": 7
+    },
+    {
+      "album_id": "a3e0abf8-ac9d-549b-bf40-7f54a403821d",
+      "lane": "gold",
+      "reason": "Heavy rotation in week 40. Off the log 7 weeks.",
+      "rank": 7
+    },
+    {
+      "album_id": "879ff22d-0f76-5916-94f2-cf390de088ad",
+      "lane": "gold",
+      "reason": "Heavy rotation in week 41. Off the log 6 weeks.",
+      "rank": 6
+    },
+    {
+      "album_id": "5681e59b-a062-5f19-a862-84aeb25e7ac7",
+      "lane": "gold",
+      "reason": "Heavy rotation in week 41. Off the log 6 weeks.",
+      "rank": 6
+    },
+    {
+      "album_id": "014e8654-14d0-5796-862e-4e07a9ed70a6",
+      "lane": "gold",
+      "reason": "Heavy rotation in week 41. Off the log 6 weeks.",
+      "rank": 6
+    },
+    {
+      "album_id": "3c499f8d-475a-5744-b7f2-c0886f387cf2",
+      "lane": "gold",
+      "reason": "Heavy rotation in week 41. Off the log 6 weeks.",
+      "rank": 6
+    },
+    {
+      "album_id": "1f151e20-87b6-50af-ae02-c39959f7d419",
+      "lane": "gold",
+      "reason": "3 of your top tracks are on it. Never logged.",
+      "rank": 1.5
+    },
+    {
+      "album_id": "d7865237-0588-59d7-a558-546b9bdab685",
+      "lane": "gold",
+      "reason": "2 of your top tracks are on it. Never logged.",
+      "rank": 1.0
+    },
+    {
+      "album_id": "57a0d087-9617-5466-b31e-76dde955248d",
+      "lane": "first",
+      "reason": "New to you. Jazz, 2024.",
+      "rank": 0
+    },
+    {
+      "album_id": "099422fb-6531-5a20-b5d4-aabb4b6d93a2",
+      "lane": "first",
+      "reason": "New to you. Folk, 2024.",
+      "rank": 0
+    },
+    {
+      "album_id": "261fe5b8-8f6f-55d9-8a83-eb042691d37d",
+      "lane": "first",
+      "reason": "New to you. R&B and soul, 2021.",
+      "rank": 0
+    },
+    {
+      "album_id": "12388e8e-6514-5eea-bc92-8aa9d5157406",
+      "lane": "first",
+      "reason": "New to you. R&B and soul, 2024.",
+      "rank": 0
+    },
+    {
+      "album_id": "c511e187-8a23-50b3-97a5-928923450272",
+      "lane": "first",
+      "reason": "New to you. Ambient, 2020.",
+      "rank": 0
+    },
+    {
+      "album_id": "22160053-b9b1-5eed-bcf8-b114315569c0",
+      "lane": "current",
+      "reason": "You follow Floating Points. Out 13 Nov.",
+      "rank": -3
+    },
+    {
+      "album_id": "21825746-d4c7-52f8-aabe-97b2eea90fc2",
+      "lane": "current",
+      "reason": "You follow Bon Iver. Out 13 Nov.",
+      "rank": -3
+    },
+    {
+      "album_id": "c5e6050b-48e1-5373-99f7-4f1c8fa1945e",
+      "lane": "current",
+      "reason": "You follow Little Simz. Out 6 Nov.",
+      "rank": -10
+    },
+    {
+      "album_id": "e6aee2b5-468e-5454-b28c-c369785c7436",
+      "lane": "current",
+      "reason": "Turnstile is in your top artists. Out 6 Nov.",
+      "rank": -10
+    },
+    {
+      "album_id": "cd6b945c-33f9-58bc-8d14-2efc1e591afc",
+      "lane": "current",
+      "reason": "Japanese Breakfast is in your top artists. Out 30 Oct.",
+      "rank": -17
+    }
+  ],
+  "checks": [
+    {
+      "id": "len",
+      "label": "4 to 8 hours",
+      "ok": true,
+      "value": "5 h 08 min"
+    },
+    {
+      "id": "current",
+      "label": "At least 2 currents",
+      "ok": true,
+      "value": "2"
+    },
+    {
+      "id": "first",
+      "label": "At least 1 first play",
+      "ok": true,
+      "value": "1"
+    },
+    {
+      "id": "gold",
+      "label": "At least 1 from gold",
+      "ok": true,
+      "value": "3"
+    },
+    {
+      "id": "genre",
+      "label": "No genre over 40%",
+      "ok": false,
+      "value": "Jazz 42%"
+    },
+    {
+      "id": "artist",
+      "label": "No artist twice",
+      "ok": false,
+      "value": "Floating Points"
+    }
+  ],
+  "spotify": {
+    "state": "connected",
+    "client_id": "0123456789abcdef0123456789abcdef",
+    "error": null,
+    "account_name": "Synthetic Listener",
+    "connected_at": "2026-11-02T09:00:00+00:00",
+    "synced_at": "2026-11-20T07:42:00+00:00"
+  }
+}

@@ -104,9 +104,23 @@ dev-be:
 dev-fe:
     cd {{fe_dir}} && pnpm run dev
 
+# Start Storybook on mocked API responses (no backend needed)
+storybook-fe:
+    cd {{fe_dir}} && pnpm run storybook
+
+# Build static Storybook into the frontend's storybook-static/
+build-storybook-fe:
+    cd {{fe_dir}} && pnpm run build-storybook
+
 # Start both dev servers
 dev:
     #!/usr/bin/env bash
     just dev-be &
     just dev-fe &
     wait
+
+# Regenerate Storybook's desk fixture from the prototype seed through the backend
+storybook-fixture:
+    pnpm dlx tsx -e "import {seedState} from './prototype/app/src/data/seed.ts'; console.log(JSON.stringify(seedState()))" \
+      | uv run python scripts/storybook_fixture.py > {{fe_dir}}/src/stories/mocks/desk.json
+    cd {{fe_dir}} && pnpm biome format --write src/stories/mocks/desk.json

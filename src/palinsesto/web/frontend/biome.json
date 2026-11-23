@@ -16,6 +16,14 @@
     }
   },
   "files": {
-    "ignore": ["node_modules", "dist"]
+    "ignore": [
+      "node_modules",
+      "dist",
+      "src/routeTree.gen.ts",
+      "test-results",
+      "playwright-report",
+      "storybook-static",
+      ".storybook/public"
+    ]
   }
 }

@@ -1,70 +1,40 @@
 # Architecture
 
-## Overview
-
-palinsesto is a Python web application using FastAPI for the backend and a separately-scaffolded frontend.
-
-## Project Structure
-
-```
-src/palinsesto/
-  app.py               # FastAPI app factory
-  config.py            # Pydantic-settings config from env vars
-  logging.py           # structlog setup
-  routers/             # HTTP endpoint definitions
-    health.py          # /healthz, /readyz
-  controllers/         # Request orchestration
-  services/            # Business logic
-  dtos/                # Pydantic request/response models
-  web/                 # Frontend integration
-    serve.py           # Static file serving for production
-    frontend/          # Frontend app (scaffolded separately)
-  db.py                # Async engine/session factory
-  models/              # SQLAlchemy async models
-  repositories/        # Data access layer
-tests/
-  unit/                # Fast, isolated unit tests
-  integration/         # Tests with real dependencies
-  e2e/                 # End-to-end tests
-```
+Palinsesto is a FastAPI backend on Postgres with a React frontend served from the same origin. Read [CONTEXT.md](../CONTEXT.md) for domain meanings and [plan.md](plan.md) for decisions.
 
 ## Layering
 
 ```
-routers (HTTP endpoints, parse requests into DTOs)
-  -> controllers (orchestrate across services)
-    -> services (business logic, framework-agnostic)
-      -> repositories (data access, return SQLAlchemy models)
-        -> models (SQLAlchemy)
+routers (HTTP, auth dependencies, DTOs, redirects)
+  -> services (authorization, transactions, orchestration, external calls)
+    -> repositories (queries) and models (tables)
+domains/ (pure rules, used by services)
+integrations/ (provider transport and payload mapping, used by services)
 ```
 
-DTOs (Pydantic models) are used at the router and controller level for API I/O. They are always separate from database models.
+| Location | Responsibility |
+| --- | --- |
+| `domains/rotation.py` | The candidate engine (lanes and reasons), the weekly checks and week arithmetic. Plain dataclasses in, plain results out; no HTTP, database or clock. |
+| `services/access.py` | Browser sessions, `AuthenticatedActor`, and `owned_workspace`, which every Workspace operation goes through. API keys and MCP credentials will join here when Palinsesto copies Accanto's design. |
+| `services/browser_auth.py` | Login transactions, admission by email allowlist, first-sign-in provisioning of a User and Workspace. |
+| `services/desk.py` | Reads and writes the desk. Each write locks the Workspace row, applies one change and returns the whole desk with candidates and checks. |
+| `services/spotify.py` | The Workspace's Spotify connection: sealed credentials, Connect, token refresh, sync, search, import and send. Stores blocking failures as safe error codes on the connection. |
+| `integrations/spotify.py` | `SpotifyAccounts` (authorize URL, token endpoint) and `SpotifyApi` (the Web API endpoints used). Maps every failure to a code in `ERRORS`. |
+| `repositories/desk.py` | Loads a Workspace's records keyed by public UUIDs; finds or creates catalog artists for Spotify artists. |
+| `web/frontend/src/lib` | Same-origin transport with CSRF (`api.ts`), the desk types and formatting (`desk.ts`), and the desk store (`store.tsx`), which replaces the cached desk with each write's response. |
+| `web/frontend/src/features` | The screens: log (inputs, program log, meter bridge), log book, library and album record, settings with the Spotify setup guide, and the shell. |
+| `web/frontend/src/stories` | Storybook: `screens/` for whole screens and the setup guide's states, `components/` for the clock, lanes, log, meter bridge, log book and record; `mocks/` for MSW. |
 
-## Frontend
+## Data model
 
-The frontend is scaffolded separately into `src/palinsesto/web/frontend/` using the `frontend-react` Copier template. In development, the frontend dev server runs independently with API proxying. In production, built static files are served by FastAPI via `web/serve.py`.
+- `app_user` (issuer, subject) and `workspace` (unique `owner_id`, time zone, policy as JSONB).
+- `artist`, `album`, `album_artist` (ordered credits) and `service_link` (a child of exactly one album or artist; one link per record and service; one record per Workspace, service and ref).
+- `week` (Monday start, `closed_at`, last `sent` export, `skipped` album UUIDs) with a partial unique index allowing one open week per Workspace; `log_entry` (position, lane, reason, verdict, note).
+- `service_connection` (one per Workspace and service: client ID, Fernet-sealed secret JSON, state, error code), `service_authorization` (single-use, browser-bound Connect state and PKCE verifier) and `listening_signals` (latest signals, mapped to catalog UUIDs).
+- Browser credentials as in Accanto: `browser_session` stores only token hashes; `oidc_login_transaction` is single-use and browser-bound.
 
-## Toolchain
+## Testing boundaries
 
-| Tool | Purpose |
-| ---- | ------- |
-| uv | Package management, virtual environments |
-| hatchling | Build backend |
-| ruff | Formatting and linting |
-| ty | Type checking |
-| pytest | Testing |
-| FastAPI | Async web framework |
-| uvicorn | ASGI server |
-| structlog | Structured logging |
-| pydantic-settings | Configuration |
-| pnpm | Frontend package management |
-| SQLAlchemy | Async ORM |
-| Alembic | Database migrations |
-
-## Conventions
-
-- All configuration is in `pyproject.toml`.
-- Version is the single source of truth in `pyproject.toml`, read via `importlib.metadata`.
-- `py.typed` marker enables downstream type checking (PEP 561).
-- Health endpoints are always available at `/healthz` and `/readyz`.
-- Just targets have `-be`/`-fe` variants for backend/frontend (e.g. `just fmt-be`, `just fmt-fe`).
+- `tests/unit`: the domain engine on hand-built desks, OIDC token validation with the synthetic provider, and the Spotify client against the fake server.
+- `tests/integration`: the HTTP API on real Postgres, signing in through the synthetic OIDC fixture and connecting to the fake Spotify, including every setup error.
+- Storybook renders every screen without a backend. Its desk fixture is produced by the backend from the prototype's seed (`just storybook-fixture`), so stories show the engine's real candidates and checks.

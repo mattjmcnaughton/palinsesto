@@ -1,69 +1,64 @@
 # CLAUDE.md
 
-A radio programmer's desk for planning a weekly mix of whole albums.
+Palinsesto is a radio programmer's desk for planning one weekly mix of whole albums, 4 to 8 hours long.
 
-Python web application using FastAPI, uvicorn, uv, ruff, ty, and pytest. Frontend lives in `src/palinsesto/web/frontend/`.
+Read [CONTEXT.md](CONTEXT.md) before domain or product work. Use its language consistently in code, tests and UI copy, and update it when a meaning changes. [docs/plan.md](docs/plan.md) records the decisions made so far and the delivery order.
+
+Python web application using FastAPI, SQLAlchemy, Alembic, uv, ruff, ty and pytest. The React frontend (TanStack Router and Query, Biome, Vitest, Storybook with MSW) lives in `src/palinsesto/web/frontend/`.
 
 ## Quick Reference
 
 | Command | Purpose |
 | ------- | ------- |
-| `just fmt` | Check formatting (backend + frontend) |
-| `just fmt-fix` | Fix formatting (backend + frontend) |
-| `just lint` | Check linting (backend + frontend) |
-| `just lint-fix` | Fix linting (backend + frontend) |
-| `just typecheck` | Run type checker (backend + frontend) |
-| `just test-unit` | Run unit tests (backend + frontend) |
-| `just test-integration` | Run integration tests |
-| `just test-e2e` | Run e2e tests |
-| `just test-all` | Run all tests |
-| `just test-external` | Run tests hitting external services |
+| `just fmt` / `just fmt-fix` | Check or fix formatting (backend + frontend) |
+| `just lint` / `just lint-fix` | Check or fix linting (backend + frontend) |
+| `just typecheck` | Run type checkers (backend + frontend) |
+| `just test-unit` | Unit tests (backend + frontend) |
+| `just test-integration` | Integration tests (need `PALINSESTO_TEST_DATABASE_URL`) |
 | `just gate` | Fast pre-push check (fmt + lint + typecheck + test-unit) |
 | `just gate-expensive` | Full check (gate + integration + e2e) |
-| `just gate-external` | Everything (gate-expensive + external) |
 | `just dev` | Start backend and frontend dev servers |
-| `just dev-be` | Start backend dev server only |
-| `just dev-fe` | Start frontend dev server only |
+| `just storybook-fe` | Storybook on mocked API responses, no backend needed |
+| `just storybook-fixture` | Regenerate Storybook's desk fixture through the backend |
 
-All formatting, linting, typecheck, test-unit, and gate targets have `-be` and `-fe` variants (e.g. `just fmt-be`, `just fmt-fe`).
+All formatting, linting, typecheck, test-unit and gate targets have `-be` and `-fe` variants.
 
 ## Project Structure
 
 ```
 src/palinsesto/
-  app.py                    # FastAPI app factory
-  config.py                 # Pydantic-settings based config
-  logging.py                # structlog setup
-  routers/                  # HTTP endpoint definitions
-    health.py               # /healthz, /readyz
-  controllers/              # Request orchestration
-  services/                 # Business logic
-  dtos/                     # Pydantic request/response models
-  web/                      # Frontend integration
-    serve.py                # Static file serving for production
-    frontend/               # Frontend application (scaffolded separately)
-  db.py                     # Async engine/session setup
-  models/                   # SQLAlchemy models
-  repositories/             # Data access layer
+  app.py                 # FastAPI app factory
+  config.py              # Settings from environment variables
+  oidc.py                # Auth0 (OIDC) code flow, copied from Accanto
+  domains/rotation.py    # Pure: candidate engine and weekly rules
+  integrations/spotify.py  # Spotify accounts and Web API client
+  models/                # SQLAlchemy tables: accounts, catalog, weeks, connections
+  repositories/desk.py   # Reads and catalog writes
+  services/              # access (sessions, ownership), browser_auth, desk, spotify
+  routers/               # HTTP: browser_auth, desk, spotify, health
+  dtos/                  # Pydantic request bodies
+  web/frontend/          # React app; stories in src/stories
 tests/
-  unit/                     # Unit tests
-  integration/              # Integration tests
-  e2e/                      # End-to-end tests
+  unit/                  # Domain, OIDC and Spotify client (fake server)
+  integration/           # Real Postgres with the OIDC fixture and fake Spotify
+  fakes/spotify_server.py  # Fake Spotify accounts service and Web API
 ```
 
 ## Key Conventions
 
-- Source code lives in `src/palinsesto/` (src layout).
-- **Layering:** routers -> controllers -> services -> repositories.
-- **DTOs** are Pydantic models for API I/O, always separate from DB models.
-- **Frontend** is scaffolded separately into `src/palinsesto/web/frontend/` using the `frontend-react` template.
-- Tests are organized by type in `tests/unit/`, `tests/integration/`, `tests/e2e/`.
-- Use `@pytest.mark.external` for tests that hit external services.
-- All config is in `pyproject.toml` — no separate config files.
-- Backend: `just dev-be`. Frontend: `just dev-fe`. Both: `just dev`.
+- **Layering:** routers → services → repositories. Pure rules live in `domains/` with no HTTP, database or clock access.
+- **Ownership:** every musical record belongs to a Workspace, and every service call takes an `AuthenticatedActor` and checks `owned_workspace`. Another User's Workspace answers 404.
+- **Catalog first:** albums and artists are Palinsesto's records; Spotify is a `service_link` child row. Weeks and log entries never store a service ID.
+- **Secrets:** the Spotify client secret and refresh token are sealed with Fernet (`CONNECTION_SECRET_KEY`) and never returned or logged. Spotify failures become safe error codes (`integrations/spotify.ERRORS`).
+- **Integrations** live in `integrations/<provider>.py` and are tested against a fake server in `tests/fakes/`. Mark tests that reach a real service `@pytest.mark.external`.
+- **Agent, MCP and API keys** are not built yet. They will copy Accanto's design once proven there; `services/access.py` is where API-key and MCP credentials will join browser sessions.
+- **DTOs** are Pydantic models for API I/O, separate from database tables.
+- Use synthetic data only in fixtures, stories and screenshots.
 
 ## More Information
 
-- `docs/architecture.md` — read before adding new modules or changing project structure
-- `docs/development.md` — read for environment setup, debugging, or common tasks
-- `docs/api.md` — API endpoint reference
+- `docs/plan.md`: decisions and delivery order
+- `docs/architecture.md`: read before adding modules
+- `docs/development.md`: setup, local sign-in, Storybook, tests
+- `docs/api.md`: API reference
+- `docs/technical/box-operations.md`: the planned Amp Box deployment (not deployed yet)

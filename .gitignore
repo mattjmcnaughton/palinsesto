@@ -56,9 +56,8 @@ storybook-static/
 /.agentic/
 /.amp/portals/
 
-# Private financial exports and recovery data must never enter version control.
-palinsesto-prototype-*.json
-palinsesto-recovery.json
+# Exports of a real Workspace must never enter version control.
+palinsesto-export-*.json
 /private-data/
 .env.*
 !.env.example

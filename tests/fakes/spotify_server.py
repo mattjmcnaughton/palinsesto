@@ -21,6 +21,7 @@ artist, album and account here is invented.
 
 import base64
 import hashlib
+import os
 import secrets
 from urllib.parse import parse_qs, urlencode
 
@@ -388,3 +389,16 @@ def error(status, message):
     return JSONResponse(
         {"error": {"status": status, "message": message}}, status_code=status
     )
+
+
+# For local development: uv run uvicorn tests.fakes.spotify_server:app --port 55440
+# with SPOTIFY_ACCOUNTS_URL=http://127.0.0.1:55440 and SPOTIFY_API_URL=http://127.0.0.1:55440/v1.
+fake = FakeSpotify(
+    redirect_uris=(
+        os.environ.get(
+            "PALINSESTO_TEST_SPOTIFY_REDIRECT",
+            "http://127.0.0.1:55438/api/spotify/callback",
+        ),
+    )
+)
+app = fake.app

@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rotation: week 47</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600&family=Barlow+Semi+Condensed:wght@400;500;600&family=Doto:wght@800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ground:#0F2A33;--well:#0A1F26;--raised:#173743;--line:#2B4A55;--text:#F0E8D4;--dim:#9DB0B0;--red:#FF6A4D;
+  --jazz:#F2C14E;--rnb:#F08A6B;--electronic:#7FC4E8;--ambient:#9AD6B4;--rock:#E89AB5;--folk:#D9C79A;
+  --ui:'Barlow Semi Condensed',system-ui,sans-serif;--cond:'Barlow Condensed',system-ui,sans-serif;--mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--ground);color:var(--text);font:400 14px/1.35 var(--ui);display:grid;grid-template-rows:52px minmax(0,1fr) 54px;height:100vh;overflow:hidden;-webkit-font-smoothing:antialiased}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--jazz);outline-offset:1px}
+.dim{color:var(--dim)}
+.mono{font-family:var(--mono);font-size:12.5px;font-variant-numeric:tabular-nums}
+
+header{display:flex;align-items:center;gap:26px;padding:0 20px;border-bottom:1px solid var(--line)}
+.mark{font:600 23px/1 var(--cond);display:flex;align-items:center;gap:9px;letter-spacing:.01em}
+.week{color:var(--dim)}
+nav{display:flex;height:100%}
+nav button{background:none;border:0;border-bottom:2px solid transparent;padding:2px 12px 0;height:100%;color:var(--dim);cursor:pointer;font-size:15px}
+nav button[aria-current=page]{color:var(--text);border-bottom-color:var(--text)}
+@media(hover:hover){nav button:hover{color:var(--text)}}
+.outs{margin-left:auto;display:flex;align-items:center;gap:18px;color:var(--dim);font-size:13px}
+.outs a{color:var(--dim)}
+.lamp{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--line);margin-right:6px;vertical-align:0}
+.lamp.on{background:var(--ambient)}
+.lamp.air{background:var(--red)}
+.lamp.amber{background:var(--jazz)}
+
+main{min-height:0;display:grid}
+main.v-log{grid-template-columns:400px minmax(0,1fr) 380px}
+main.v-book{grid-template-columns:minmax(0,1fr) 380px}
+main.v-lib{grid-template-columns:400px minmax(0,1fr)}
+.pane{min-height:0;overflow:auto;border-right:1px solid var(--line)}
+.pane:last-child{border-right:0}
+.ph{position:sticky;top:0;z-index:2;background:var(--ground);display:flex;align-items:baseline;gap:10px;padding:14px 16px 11px;border-bottom:1px solid var(--line)}
+.ph h2{margin:0;font:600 16px/1 var(--cond);letter-spacing:.02em}
+.ph span{color:var(--dim);font-size:13px}
+.ph .r{margin-left:auto}
+
+/* Inputs */
+.lane{border-bottom:1px solid var(--line);padding-bottom:6px}
+.lane-h{display:grid;grid-template-columns:20px 1fr auto;column-gap:8px;align-items:baseline;padding:12px 16px 6px}
+.lane-h .no{font:600 13px/18px var(--cond);color:var(--well);background:var(--dim);border-radius:3px;text-align:center}
+.lane-h h3{margin:0;font:600 17px/1 var(--cond);letter-spacing:.01em}
+.lane-h .n{color:var(--dim);font:400 12px var(--mono)}
+.lane-h p{grid-column:2/4;margin:3px 0 0;color:var(--dim);font-size:13px}
+.row{display:grid;grid-template-columns:24px minmax(0,1fr) auto 44px;gap:10px;align-items:center;height:30px;padding:0 16px;width:100%;background:none;border:0;text-align:left;cursor:pointer}
+.row .t{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.row .t em{font-style:normal;color:var(--dim);margin-left:4px}
+.row .y{font:400 12px var(--mono);color:var(--dim)}
+.row .y.onl{color:var(--ambient);font-family:var(--ui);font-size:12.5px}
+.row .d{font:400 12px var(--mono);text-align:right}
+.thumb{width:24px;height:24px;display:block;border-radius:2px;overflow:hidden}
+.thumb svg,.art svg{width:100%;height:100%;display:block}
+@media(hover:hover){.row:hover{background:var(--raised)}}
+.row[aria-selected=true]{background:var(--raised)}
+.row.onlog .t{color:var(--dim)}
+.detail{display:grid;grid-template-columns:96px 1fr;gap:14px;padding:6px 16px 14px;background:var(--raised)}
+.art{width:96px;height:96px;border-radius:2px;overflow:hidden;display:block}
+.detail p{margin:0}
+.detail .why{font-size:14.5px}
+.detail .meta{color:var(--dim);font-size:13px;margin:3px 0 10px}
+.detail .airs{color:var(--dim);font-size:13px;margin-left:8px}
+
+.btn{border:1px solid var(--line);background:var(--well);height:28px;padding:0 10px;border-radius:4px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;font-size:14px;white-space:nowrap}
+.btn kbd{font:500 10.5px/14px var(--mono);color:var(--dim);border:1px solid var(--line);border-radius:3px;padding:0 4px}
+.btn.primary{background:var(--text);color:var(--well);border-color:var(--text);font-weight:500}
+.btn.primary kbd{color:var(--well);border-color:rgba(10,31,38,.3)}
+@media(hover:hover){.btn:hover{border-color:var(--dim)}.btn.primary:hover{background:#fff;border-color:#fff}}
+.btn:active{transform:scale(.97)}
+
+/* Program log */
+.lr{display:grid;grid-template-columns:24px 68px minmax(0,1fr) 10px 34px 62px 74px;gap:10px;align-items:center;height:36px;padding:0 16px;border-bottom:1px solid rgba(43,74,85,.55);cursor:default}
+.lr.head{height:30px;color:var(--dim);font-size:12.5px;border-bottom-color:var(--line)}
+.lr .p,.lr .in,.lr .du{font:400 12.5px var(--mono);font-variant-numeric:tabular-nums}
+.lr .p{color:var(--dim)}
+.lr .du{text-align:right}
+.lr .al{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:14.5px}
+.lr .al em{font-style:normal;color:var(--dim);margin-left:6px}
+.dot{width:8px;height:8px;border-radius:50%;display:block}
+.cat{font:600 13px var(--cond);color:var(--dim);letter-spacing:.05em}
+.act{display:flex;gap:2px;justify-content:flex-end;visibility:hidden}
+.lr:hover .act,.lr:focus-within .act,.lr.hl .act{visibility:visible}
+.ib{width:22px;height:22px;border:0;background:none;color:var(--dim);border-radius:3px;cursor:pointer;display:grid;place-items:center;padding:0}
+.ib svg{width:12px;height:12px}
+@media(hover:hover){.ib:hover{background:var(--line);color:var(--text)}}
+.lr.hl{background:var(--raised)}
+.lr.over .p,.lr.over .in,.lr.over .du{color:var(--red)}
+.rule{display:flex;align-items:center;gap:10px;padding:0 16px;height:28px;color:var(--jazz);font:500 12px var(--mono)}
+.rule::after{content:'';flex:1;border-top:1px dashed currentColor}
+.rule.max{color:var(--red)}
+.out{display:flex;justify-content:space-between;padding:14px 16px;font:500 13px var(--mono);color:var(--dim)}
+.out b{font-weight:500;color:var(--text)}
+.empty{padding:40px 16px;color:var(--dim);font-size:15px;max-width:44ch}
+
+/* Meter bridge */
+.clock{display:block;margin:10px auto 0;width:300px;height:300px;overflow:visible}
+.clock .seg{cursor:pointer}
+.clock .seg.hl{stroke-width:28px}
+.lamps{display:flex;justify-content:center;gap:20px;color:var(--dim);font-size:13px;margin:8px 0 16px}
+.lamps .lit{color:var(--text)}
+.sec{padding:14px 20px 10px;border-top:1px solid var(--line)}
+.sec h3{margin:0 0 8px;font:600 15px/1 var(--cond);letter-spacing:.02em}
+.meter{display:grid;grid-template-columns:96px 1fr 52px;gap:10px;align-items:center;height:22px;font-size:13.5px}
+.segs{display:grid;grid-template-columns:repeat(10,1fr);gap:3px}
+.segs i{height:10px;border-radius:1px;background:var(--well);box-shadow:inset 0 0 0 1px var(--line)}
+.meter .v{font:400 12px var(--mono);color:var(--dim);text-align:right}
+.pol{display:grid;grid-template-columns:16px 1fr auto;gap:6px;align-items:center;height:24px;font-size:13.5px}
+.pol .v{font:400 12px var(--mono);color:var(--dim)}
+.pol.miss{color:var(--text)}
+.pol.miss .v{color:var(--red)}
+
+/* Footer */
+footer{display:flex;align-items:center;gap:18px;padding:0 16px;border-top:1px solid var(--line);background:var(--well);position:relative}
+.cmd{flex:0 1 440px;display:flex;align-items:center;gap:8px;height:34px;border:1px solid var(--line);border-radius:4px;padding:0 10px;background:var(--ground)}
+.cmd span{color:var(--ambient);font:500 13px var(--mono)}
+.cmd input{flex:1;min-width:0;background:none;border:0;outline:none}
+.cmd input::placeholder{color:var(--dim)}
+.cmd:focus-within{border-color:var(--dim)}
+.keys{display:flex;gap:14px;color:var(--dim);font-size:13px;white-space:nowrap}
+.keys kbd{font:500 10.5px/16px var(--mono);border:1px solid var(--line);border-radius:3px;padding:0 4px;margin-right:4px;color:var(--text)}
+footer .send{margin-left:auto;height:34px;padding:0 14px}
+.results{position:absolute;left:16px;bottom:58px;width:440px;background:var(--raised);border:1px solid var(--line);border-radius:6px;box-shadow:0 14px 32px -10px rgba(0,0,0,.55);padding:4px 0;z-index:5}
+.results .row{grid-template-columns:24px minmax(0,1fr) 44px}
+.results p{margin:0;padding:8px 14px;color:var(--dim)}
+.toast{position:fixed;right:16px;bottom:66px;background:var(--text);color:var(--well);padding:10px 14px;border-radius:4px;font-weight:500;font-size:14.5px;z-index:9;display:flex;gap:10px;align-items:center}
+
+/* Log book */
+.wk{display:grid;grid-template-columns:84px 110px 80px 76px 64px minmax(0,1fr) 16px;gap:14px;align-items:center;height:44px;padding:0 16px;width:100%;background:none;border:0;border-bottom:1px solid var(--line);text-align:left;cursor:pointer}
+.wk.draft{cursor:default}
+@media(hover:hover){button.wk:hover{background:var(--raised)}}
+.wk .w{font:600 16px var(--cond)}
+.strip{display:flex;height:8px;border-radius:1px;overflow:hidden;gap:1px}
+.vc{display:flex;gap:12px;color:var(--dim);font-size:13px;white-space:nowrap}
+.chev{color:var(--dim);transition:transform .15s ease-out}
+.wk[aria-expanded=true] .chev{transform:rotate(90deg)}
+.wk-items{background:var(--well);border-bottom:1px solid var(--line);padding:6px 0 10px}
+.wi{display:grid;grid-template-columns:24px minmax(0,1fr) 10px 52px auto;gap:12px;align-items:center;height:36px;padding:0 16px 0 32px}
+.wi .t{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wi .t em{font-style:normal;color:var(--dim);margin-left:4px}
+.vs{display:flex;border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.vs button{border:0;background:none;padding:0 10px;height:26px;font-size:13px;color:var(--dim);cursor:pointer;border-right:1px solid var(--line)}
+.vs button:last-child{border-right:0}
+.vs button[aria-pressed=true]{background:var(--text);color:var(--well)}
+.vs button.pulled[aria-pressed=true]{background:var(--red);color:var(--well)}
+@media(hover:hover){.vs button:hover{color:var(--text)}.vs button[aria-pressed=true]:hover{color:var(--well)}}
+.rot h3{margin:0;padding:16px 16px 6px;font:600 15px var(--cond);display:flex;justify-content:space-between}
+.rot h3 span{color:var(--dim);font:400 12px var(--mono)}
+.ra{display:flex;justify-content:space-between;padding:5px 16px;font-size:14px}
+.ra span{color:var(--dim);font-size:13px}
+
+/* Library */
+.rec{padding:24px 28px 40px;max-width:900px}
+.rec-top{display:grid;grid-template-columns:168px minmax(0,1fr);gap:24px}
+.rec-top .art{width:168px;height:168px}
+.rec h1{margin:0;font:600 34px/1.05 var(--cond);letter-spacing:.005em}
+.rec .by{margin:6px 0 14px;font-size:16px}
+.kv{display:grid;grid-template-columns:120px 1fr;row-gap:5px;font-size:14px}
+.kv dt{color:var(--dim)}
+.kv dd{margin:0}
+.bay-h{margin:32px 0 4px;font:600 17px var(--cond);display:flex;justify-content:space-between;align-items:baseline}
+.bay-h span{font:400 13px var(--ui);color:var(--dim)}
+.bay{display:grid;grid-template-columns:170px minmax(60px,1fr) 340px;margin-top:12px;border:1px solid var(--line);border-radius:6px;background:var(--well);padding:8px 0}
+.src{display:flex;align-items:center;justify-content:flex-end;gap:10px;padding-left:16px;text-align:right}
+.o>div{min-width:0}
+.o .sub{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.jack{width:18px;height:18px;border-radius:50%;border:2px solid var(--dim);background:var(--ground);flex:none;box-shadow:inset 0 0 0 3px var(--well)}
+.jack.on{background:var(--text);border-color:var(--text)}
+.cables{width:100%;height:100%;display:block}
+.o{display:grid;grid-template-columns:18px minmax(0,1fr) auto;gap:10px;align-items:center;height:56px;padding-right:14px}
+.o .lbl{font-size:14.5px}
+.o .sub{color:var(--dim);font-size:12.5px}
+.notes{margin-top:28px;color:var(--dim)}
+.notes p{color:var(--text);font-size:15px;margin:4px 0 0}
+</style>
+</head>
+<body>
+<header></header>
+<main></main>
+<footer>
+  <label class="cmd"><span>&gt;</span><input id="q" placeholder="Find an album in your library and press Enter to add" data-focus="q" autocomplete="off"></label>
+  <div class="keys"><span><kbd>J</kbd><kbd>K</kbd>move</span><span><kbd>A</kbd>add</span><span><kbd>X</kbd>pull</span><span><kbd>/</kbd>find</span></div>
+  <button class="btn primary send" data-act="send">Send to Spotify</button>
+  <div class="results" hidden></div>
+</footer>
+<script src="data.js"></script>
+<script src="common.js"></script>
+<script>
+{
+const { D, byId, secs, cover, fmtClock, fmtDur, esc, genreName, weekRange, shortDate, policy, recordFor } = MIX;
+const $ = s => document.querySelector(s);
+const LANES = [
+  { id: 'new', name: 'Currents', code: 'CUR', desc: 'New albums from artists you follow or play a lot.' },
+  { id: 'discover', name: 'First plays', code: 'ADD', desc: 'Artists you have never put on a log.' },
+  { id: 'vault', name: 'Gold', code: 'GLD', desc: "Heavy rotation albums you haven't aired in a year." },
+  { id: 'explore', name: 'Recurrents', code: 'REC', desc: 'More from artists you kept in rotation.' }
+];
+const laneOf = id => LANES.find(l => l.id === id);
+const VERDICTS = [['keeper', 'Heavy rotation'], ['more', 'Keep in rotation'], ['no', 'Pulled']];
+const MAX = 8 * 3600, MIN = 4 * 3600;
+const S = { view: 'log', mix: [...D.mix], sel: 'sable', ghost: null, onAir: false, open: 46, hist: structuredClone(D.history), rec: D.record.albumId, toast: '' };
+const icon = { up: '<svg viewBox="0 0 12 12"><path d="M2 8l4-4 4 4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>', down: '<svg viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>', x: '<svg viewBox="0 0 12 12"><path d="M3 3l6 6M9 3l-6 6" stroke="currentColor" stroke-width="1.6"/></svg>' };
+const total = () => S.mix.reduce((t, id) => t + secs(byId[id]), 0);
+const startOf = id => { let t = 0; for (const x of S.mix) { if (x === id) return t; t += secs(byId[x]); } return t; };
+const flat = () => LANES.flatMap(l => D.albums.filter(a => a.lane === l.id).map(a => a.id));
+
+function header() {
+  return `<div class="mark"><span class="lamp ${S.onAir ? 'air' : ''}" title="${S.onAir ? 'On air' : 'Off air'}"></span>Rotation</div>
+  <span class="week">Week ${D.week.number}, from ${shortDate(D.week.starts)}</span>
+  <nav>${[['log', 'Log'], ['book', 'Log book'], ['lib', 'Library']].map(([v, l]) => `<button data-act="view" data-v="${v}" ${S.view === v ? 'aria-current="page"' : ''}>${l}</button>`).join('')}</nav>
+  <div class="outs"><span><span class="lamp on"></span>Out 1 Spotify</span><span><span class="lamp"></span>Out 2 Apple Music</span><a href="./">All directions</a></div>`;
+}
+
+// ---------- Log view ----------
+function inputs() {
+  return `<div class="ph"><h2>Inputs</h2><span>${D.albums.length} candidates</span></div>` + LANES.map((l, i) => {
+    const list = D.albums.filter(a => a.lane === l.id);
+    return `<section class="lane"><div class="lane-h"><span class="no">${i + 1}</span><h3>${l.name}</h3><span class="n">${list.length}</span><p>${l.desc}</p></div>${list.map(row).join('')}</section>`;
+  }).join('');
+}
+function row(a) {
+  const on = S.mix.includes(a.id), sel = S.sel === a.id;
+  return `<button class="row${on ? ' onlog' : ''}" data-act="sel" data-id="${a.id}" data-focus="row-${a.id}" aria-selected="${sel}">
+    <span class="thumb">${cover(a)}</span><span class="t">${esc(a.artist)}<em>${esc(a.title)}</em></span>
+    <span class="y${on ? ' onl' : ''}">${on ? 'On log' : a.year}</span><span class="d">${fmtDur(secs(a))}</span></button>${sel ? detail(a) : ''}`;
+}
+function detail(a) {
+  const on = S.mix.includes(a.id);
+  return `<div class="detail"><span class="art">${cover(a)}</span><div><p class="why">${esc(a.reason)}</p>
+    <p class="meta">${esc(a.title)}, ${a.year}. ${genreName(a.genre)}, ${fmtDur(secs(a))}.</p>
+    ${on ? `<button class="btn" data-act="pull" data-id="${a.id}" data-focus="pull">Pull from log <kbd>X</kbd></button><span class="airs">Airs at ${fmtClock(startOf(a.id))}</span>`
+         : `<button class="btn primary" data-act="add" data-id="${a.id}" data-focus="add">Add to log <kbd>A</kbd></button>`}</div></div>`;
+}
+function logPane() {
+  const head = `<div class="ph"><h2>Program log</h2><span>${S.mix.length} albums</span><span class="r mono">${fmtClock(total())}</span></div>`;
+  if (!S.mix.length) return head + `<p class="empty">Dead air. Add an album from the inputs to start the clock.</p>`;
+  let cum = 0, minDone = false, maxDone = false, out = `<div class="lr head"><span>#</span><span>In</span><span>Album</span><span></span><span>Cat</span><span style="text-align:right">Dur</span><span></span></div>`;
+  S.mix.forEach((id, i) => {
+    const a = byId[id], st = cum; cum += secs(a);
+    if (!maxDone && cum > MAX) { maxDone = true; out += `<div class="rule max">8:00:00 maximum</div>`; }
+    out += `<div class="lr${st >= MAX || cum > MAX ? ' over' : ''}${S.sel === id ? ' hl' : ''}" data-act="sel" data-id="${id}">
+      <span class="p">${String(i + 1).padStart(2, '0')}</span><span class="in">${fmtClock(st)}</span>
+      <span class="al">${esc(a.artist)}<em>${esc(a.title)}</em></span><i class="dot" style="background:var(--${a.genre})" title="${genreName(a.genre)}"></i>
+      <span class="cat">${laneOf(a.lane).code}</span><span class="du">${fmtDur(secs(a))}</span>
+      <span class="act"><button class="ib" data-act="up" data-id="${id}" data-focus="up-${id}" aria-label="Move up">${icon.up}</button><button class="ib" data-act="down" data-id="${id}" data-focus="down-${id}" aria-label="Move down">${icon.down}</button><button class="ib" data-act="pull" data-id="${id}" aria-label="Pull from log">${icon.x}</button></span></div>`;
+    if (!minDone && cum >= MIN) { minDone = true; out += `<div class="rule">4:00:00 minimum met</div>`; }
+  });
+  if (!minDone) out += `<div class="rule">${fmtClock(MIN - cum)} to minimum</div>`;
+  const left = MAX - cum;
+  return head + out + `<div class="out"><span>${left >= 0 ? `${fmtClock(left)} of air left` : `Overrun ${fmtClock(-left)}`}</span><span>Out <b>${fmtClock(cum)}</b></span></div>`;
+}
+
+function arcPath(r, a0, a1) {
+  const p = d => [r * Math.sin(d * Math.PI / 180), -r * Math.cos(d * Math.PI / 180)];
+  const [x0, y0] = p(a0), [x1, y1] = p(a1);
+  return `M${x0.toFixed(2)} ${y0.toFixed(2)}A${r} ${r} 0 ${a1 - a0 > 180 ? 1 : 0} 1 ${x1.toFixed(2)} ${y1.toFixed(2)}`;
+}
+function clock() {
+  let cum = 0, arcs = '', over = '';
+  const deg = s => s / MAX * 360;
+  const draw = (a, s0, s1, ghost) => {
+    const a0 = deg(s0), a1 = deg(s1), col = `var(--${a.genre})`;
+    const dash = ghost ? ' stroke-dasharray="2.5 2.5" opacity=".75"' : '';
+    if (a0 < 360) arcs += `<path d="${arcPath(120, a0 + .7, Math.min(a1, 360) - .7)}" stroke="${col}" stroke-width="22" fill="none"${dash} ${ghost ? '' : `class="seg${S.sel === a.id ? ' hl' : ''}" data-act="sel" data-id="${a.id}"`}><title>${esc(a.artist)}, ${esc(a.title)}</title></path>`;
+    if (a1 > 360) over += `<path d="${arcPath(145, Math.max(a0, 360) - 360 + .5, a1 - 360 - .5)}" stroke="var(--red)" stroke-width="6" fill="none"${dash}/>`;
+  };
+  S.mix.forEach(id => { const a = byId[id]; draw(a, cum, cum + secs(a)); cum += secs(a); });
+  const gid = S.ghost ?? S.sel, g = gid && !S.mix.includes(gid) ? byId[gid] : null;
+  if (g) draw(g, cum, cum + secs(g), true);
+  let ticks = '';
+  for (let h = 0; h < 8; h++) {
+    const d = h * 45, s = Math.sin(d * Math.PI / 180), c = -Math.cos(d * Math.PI / 180);
+    ticks += `<line x1="${s * 134}" y1="${c * 134}" x2="${s * 139}" y2="${c * 139}" stroke="#9DB0B0" stroke-width="1.5"/>`;
+    if (h % 2 === 0) ticks += `<text x="${s * 152}" y="${c * 152 + 4}" text-anchor="middle" font-family="IBM Plex Mono" font-size="10.5" fill="#9DB0B0">${h === 0 ? '8h' : h + 'h'}</text>`;
+  }
+  const shown = cum + (g ? secs(g) : 0);
+  return `<svg class="clock" viewBox="-160 -160 320 320" role="img" aria-label="Program clock: ${fmtClock(cum)} of 8 hours">
+    <defs><pattern id="hatch" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="2" height="5" fill="#2B4A55"/></pattern></defs>
+    <circle r="120" fill="none" stroke="#0A1F26" stroke-width="24"/>
+    <path d="${arcPath(98, .5, 179.5)}" stroke="url(#hatch)" stroke-width="10" fill="none"/>
+    <text x="0" y="-80" text-anchor="middle" font-family="Barlow Semi Condensed" font-size="11" fill="#9DB0B0">minimum</text>
+    ${ticks}${arcs}${over}
+    <text x="0" y="8" text-anchor="middle" font-family="Doto" font-weight="800" font-size="34" fill="${shown > MAX ? '#FF6A4D' : '#F0E8D4'}">${fmtClock(shown)}</text>
+    <text x="0" y="32" text-anchor="middle" font-family="Barlow Semi Condensed" font-size="13" fill="#9DB0B0">${g ? `with ${esc(g.artist.length > 26 ? g.artist.slice(0, 25) + '…' : g.artist)}` : 'of 8:00:00'}</text>
+    ${g ? `<text x="0" y="50" text-anchor="middle" font-family="IBM Plex Mono" font-size="11" fill="#9DB0B0">+${fmtClock(secs(g))}</text>` : ''}
+  </svg>`;
+}
+function bridge() {
+  const items = S.mix.map(id => byId[id]), t = total() || 1;
+  const genres = D.genres.map(g => ({ ...g, s: items.filter(a => a.genre === g.id).reduce((x, a) => x + secs(a), 0) }));
+  const segs = (n, col) => `<span class="segs">${Array.from({ length: 10 }, (_, i) => `<i${i < n ? ` style="background:${col};box-shadow:none"` : ''}></i>`).join('')}</span>`;
+  const pol = policy(items);
+  return `<div class="ph"><h2>Meter bridge</h2></div>${clock()}
+    <div class="lamps"><span class="${total() >= MIN ? 'lit' : ''}"><span class="lamp ${total() >= MIN ? 'amber' : ''}"></span>Minimum met</span><span class="${total() > MAX ? 'lit' : ''}"><span class="lamp ${total() > MAX ? 'air' : ''}"></span>Overrun</span></div>
+    <div class="sec"><h3>Rotation policy</h3>${pol.map(p => `<div class="pol${p.ok ? '' : ' miss'}"><span class="lamp ${p.ok ? 'on' : 'air'}"></span><span>${p.label}</span><span class="v">${p.value}</span></div>`).join('')}</div>
+    <div class="sec"><h3>Genres</h3>${genres.map(g => `<div class="meter"><span>${g.name}</span>${segs(Math.round(g.s / t * 10), `var(--${g.id})`)}<span class="v">${Math.round(g.s / t * 100)}%</span></div>`).join('')}</div>
+    <div class="sec"><h3>Categories</h3>${LANES.map(l => { const n = items.filter(a => a.lane === l.id).length; return `<div class="meter"><span>${l.name}</span>${segs(n, 'var(--text)')}<span class="v">${n}</span></div>`; }).join('')}</div>`;
+}
+
+// ---------- Log book ----------
+function weekTotals(w) { return w.items.reduce((t, a) => t + secs(a), 0); }
+function logbook() {
+  const draftRow = `<div class="wk draft"><span class="w">Week ${D.week.number}</span><span class="dim">${weekRange(D.week.starts)}</span><span class="mono">${fmtClock(total())}</span><span>${S.mix.length} albums</span>${strip(S.mix.map(id => byId[id]))}<span class="vc"><span><span class="lamp ${S.onAir ? 'air' : 'amber'}"></span>${S.onAir ? 'On air' : 'On the desk'}</span></span><span></span></div>`;
+  const rows = S.hist.map(w => {
+    const open = S.open === w.week, c = k => w.items.filter(a => a.verdict === k).length, un = w.items.filter(a => !a.verdict).length;
+    return `<button class="wk" data-act="open" data-week="${w.week}" data-focus="wk-${w.week}" aria-expanded="${open}"><span class="w">Week ${w.week}</span><span class="dim">${weekRange(w.starts)}</span><span class="mono">${fmtClock(weekTotals(w))}</span><span>${w.items.length} albums</span>${strip(w.items)}
+      <span class="vc"><span>${c('keeper')} heavy</span><span>${c('more')} in rotation</span><span>${c('no')} pulled</span>${un ? `<span style="color:var(--jazz)">${un} unrated</span>` : ''}</span><span class="chev">${icon.up.replace('M2 8l4-4 4 4', 'M4 2l4 4-4 4')}</span></button>
+      ${open ? `<div class="wk-items">${w.items.map((a, i) => `<div class="wi"><span class="thumb">${cover(a)}</span><span class="t">${esc(a.artist)}<em>${esc(a.title)}</em></span><i class="dot" style="background:var(--${a.genre})"></i><span class="mono dim">${fmtDur(secs(a))}</span>
+        <span class="vs" role="group" aria-label="Verdict">${VERDICTS.map(([k, l]) => `<button class="${k === 'no' ? 'pulled' : ''}" data-act="verdict" data-week="${w.week}" data-i="${i}" data-k="${k}" data-focus="v-${w.week}-${i}-${k}" aria-pressed="${a.verdict === k}">${l}</button>`).join('')}</span></div>`).join('')}</div>` : ''}`;
+  }).join('');
+  return `<section class="pane"><div class="ph"><h2>Log book</h2><span>Every week you have programmed, newest first</span></div>${draftRow}${rows}</section><section class="pane rot">${rotationPane()}</section>`;
+}
+function strip(items) {
+  const t = items.reduce((x, a) => x + a.minutes, 0) || 1;
+  return `<span class="strip">${items.map(a => `<i style="flex:${a.minutes / t};background:var(--${a.genre})"></i>`).join('')}</span>`;
+}
+function rotationPane() {
+  const last = {};
+  [...S.hist].reverse().forEach(w => w.items.forEach(a => { last[a.artist] = { v: a.verdict, wk: w.week }; }));
+  const group = (k, title) => { const list = Object.entries(last).filter(([, x]) => x.v === k); return `<h3>${title}<span>${list.length}</span></h3>${list.map(([n, x]) => `<div class="ra">${esc(n)}<span>Last aired week ${x.wk}</span></div>`).join('')}`; };
+  return `<div class="ph"><h2>Artists</h2><span>Status from your verdicts</span></div>${group('keeper', 'Heavy rotation')}${group('more', 'Keep in rotation')}${group('no', 'Pulled')}`;
+}
+
+// ---------- Library ----------
+function library() {
+  const a = byId[S.rec], r = recordFor(a);
+  const on = [...S.hist.filter(w => w.items.some(x => x.title === a.title)).map(w => `Week ${w.week}`), ...(S.mix.includes(a.id) ? [`Week ${D.week.number}, this week`] : [])];
+  const H = r.services.length * 56, mid = H / 2;
+  const cols = ['#F2C14E', '#9AD6B4', '#7FC4E8', '#E89AB5'];
+  const cables = r.services.map((s, i) => s.status === 'linked' ? `<path d="M0 ${mid} C 60 ${mid}, 60 ${i * 56 + 28}, 120 ${i * 56 + 28}" stroke="${cols[i % 4]}" stroke-width="3" fill="none" vector-effect="non-scaling-stroke"/>` : '').join('');
+  return `<section class="pane"><div class="ph"><h2>Library</h2><span>${D.albums.length} albums in your catalog</span></div>
+    ${D.albums.map(x => `<button class="row" data-act="rec" data-id="${x.id}" data-focus="rec-${x.id}" aria-selected="${x.id === S.rec}"><span class="thumb">${cover(x)}</span><span class="t">${esc(x.artist)}<em>${esc(x.title)}</em></span><span class="y">${x.year}</span><span class="d">${fmtDur(secs(x))}</span></button>`).join('')}</section>
+  <section class="pane"><div class="rec">
+    <div class="rec-top"><span class="art">${cover(a)}</span><div><h1>${esc(a.title)}</h1><p class="by">${r.artists.map(esc).join(', ')}</p>
+      <dl class="kv"><dt>Catalog ID</dt><dd class="mono">${r.catalogId}</dd><dt>Released</dt><dd>${r.released}</dd>${r.label ? `<dt>Label</dt><dd>${esc(r.label)}</dd>` : ''}<dt>Length</dt><dd>${fmtClock(secs(a))}, ${r.tracks} tracks</dd><dt>Genre</dt><dd>${genreName(a.genre)}</dd><dt>On logs</dt><dd>${on.length ? on.join(', ') : 'Not aired yet'}</dd></dl></div></div>
+    <div class="bay-h">Outputs<span>This record lives in your catalog. Outputs are the services where it plays.</span></div>
+    <div class="bay" style="height:${H + 16}px">
+      <div class="src"><div><div>Catalog</div><div class="mono dim">${r.catalogId}</div></div><span class="jack on"></span></div>
+      <svg class="cables" viewBox="0 0 120 ${H}" preserveAspectRatio="none" aria-hidden="true">${cables}</svg>
+      <div>${r.services.map((s, i) => `<div class="o"><span class="jack ${s.status === 'linked' ? 'on' : ''}" style="${s.status === 'linked' ? `background:${cols[i % 4]};border-color:${cols[i % 4]}` : ''}"></span>
+        <div><div class="lbl">Out ${i + 1} ${s.name}</div><div class="sub">${s.status === 'linked' ? (s.id ? `<span class="mono">${esc(s.id)}</span>` : 'Linked') : s.status === 'search' ? `Searching ${s.name} for a match` : 'Not patched'}</div></div>
+        ${s.status === 'linked' ? `<button class="btn" data-act="unpatch" data-i="${i}" data-focus="svc-${i}">Unpatch</button>` : `<button class="btn" data-act="patch" data-i="${i}" data-focus="svc-${i}" ${s.status === 'search' ? 'disabled' : ''}>Patch</button>`}</div>`).join('')}</div>
+    </div>
+    ${r.notes ? `<div class="notes">Your notes<p>${esc(r.notes)}</p></div>` : ''}
+  </div></section>`;
+}
+
+// ---------- Render ----------
+let lastView = null;
+function render() {
+  const m = $('main');
+  const tops = lastView === S.view ? [...m.querySelectorAll('.pane')].map(p => p.scrollTop) : [];
+  const fk = document.activeElement?.dataset?.focus;
+  $('header').innerHTML = header();
+  m.className = 'v-' + S.view;
+  m.innerHTML = S.view === 'log' ? `<section class="pane">${inputs()}</section><section class="pane">${logPane()}</section><section class="pane" id="bridge">${bridge()}</section>`
+    : S.view === 'book' ? logbook() : library();
+  m.querySelectorAll('.pane').forEach((p, i) => { if (tops[i] != null) p.scrollTop = tops[i]; });
+  lastView = S.view;
+  if (fk && fk !== 'q') document.querySelector(`[data-focus="${fk}"]`)?.focus({ preventScroll: true });
+}
+const renderBridge = () => { const b = $('#bridge'); if (b) b.innerHTML = bridge(); };
+function toast(msg) {
+  document.querySelector('.toast')?.remove();
+  const t = document.createElement('div'); t.className = 'toast'; t.innerHTML = `<span class="lamp air"></span>${msg}`;
+  document.body.append(t); setTimeout(() => t.remove(), 4200);
+}
+const add = id => { if (id && !S.mix.includes(id)) { S.mix.push(id); S.onAir = false; render(); } };
+const pull = id => { S.mix = S.mix.filter(x => x !== id); S.onAir = false; render(); };
+
+document.addEventListener('click', e => {
+  const el = e.target.closest('[data-act]'); if (!el) return;
+  const { act, id } = el.dataset;
+  if (act === 'view') { S.view = el.dataset.v; render(); }
+  else if (act === 'sel') { S.sel = id; S.ghost = null; render(); }
+  else if (act === 'add') { add(id); }
+  else if (act === 'pull') { e.stopPropagation(); pull(id); }
+  else if (act === 'up' || act === 'down') {
+    e.stopPropagation();
+    const i = S.mix.indexOf(id), j = act === 'up' ? i - 1 : i + 1;
+    if (j >= 0 && j < S.mix.length) { [S.mix[i], S.mix[j]] = [S.mix[j], S.mix[i]]; render(); }
+  }
+  else if (act === 'send') {
+    if (!S.mix.length) return toast('Nothing to send. The log is empty.');
+    S.onAir = true; render();
+    toast(`On air. Week ${D.week.number} is a Spotify playlist, ${S.mix.length} albums, ${fmtClock(total())}.`);
+  }
+  else if (act === 'open') { const w = +el.dataset.week; S.open = S.open === w ? null : w; render(); }
+  else if (act === 'verdict') { const it = S.hist.find(w => w.week === +el.dataset.week).items[+el.dataset.i]; it.verdict = it.verdict === el.dataset.k ? null : el.dataset.k; render(); }
+  else if (act === 'rec') { S.rec = id; render(); }
+  else if (act === 'patch') {
+    const s = recordFor(byId[S.rec]).services[+el.dataset.i]; s.status = 'search'; render();
+    setTimeout(() => { s.status = 'linked'; s.id = `Matched by UPC`; render(); }, 900);
+  }
+  else if (act === 'unpatch') { const s = recordFor(byId[S.rec]).services[+el.dataset.i]; s.status = 'unlinked'; delete s.id; render(); }
+});
+// Hovering a candidate draws a ghost arc on the clock.
+document.addEventListener('pointerover', e => {
+  if (S.view !== 'log') return;
+  const r = e.target.closest('.row[data-id]');
+  const next = r ? r.dataset.id : null;
+  if (next !== S.ghost) { S.ghost = next; renderBridge(); }
+});
+
+// Command line
+const q = $('#q'), res = $('.results');
+function matches() {
+  const s = q.value.trim().toLowerCase();
+  return s ? D.albums.filter(a => !S.mix.includes(a.id) && (a.artist + ' ' + a.title).toLowerCase().includes(s)).slice(0, 6) : [];
+}
+function showResults() {
+  if (!q.value.trim()) { res.hidden = true; return; }
+  const m = matches();
+  res.hidden = false;
+  res.innerHTML = m.length ? m.map((a, i) => `<button class="row" data-act="add" data-id="${a.id}" aria-selected="${i === 0}"><span class="thumb">${cover(a)}</span><span class="t">${esc(a.artist)}<em>${esc(a.title)}</em></span><span class="d">${fmtDur(secs(a))}</span></button>`).join('')
+    : `<p>No album in your library matches “${esc(q.value)}”.</p>`;
+}
+q.addEventListener('input', showResults);
+q.addEventListener('keydown', e => {
+  if (e.key === 'Enter') { const m = matches(); if (m[0]) { add(m[0].id); q.value = ''; showResults(); } }
+  if (e.key === 'Escape') { q.value = ''; showResults(); q.blur(); }
+});
+res.addEventListener('click', () => { q.value = ''; showResults(); });
+
+document.addEventListener('keydown', e => {
+  if (e.target.matches('input') || e.metaKey || e.ctrlKey || S.view !== 'log') return;
+  const f = flat(), i = f.indexOf(S.sel);
+  if (e.key === 'j' || e.key === 'k') {
+    S.sel = f[Math.max(0, Math.min(f.length - 1, i + (e.key === 'j' ? 1 : -1)))]; S.ghost = null; render();
+    document.querySelector(`[data-focus="row-${S.sel}"]`)?.focus();
+  } else if (e.key === 'a') add(S.sel);
+  else if (e.key === 'x' && S.mix.includes(S.sel)) pull(S.sel);
+  else if (e.key === '/') { e.preventDefault(); q.focus(); }
+});
+
+render();
+}
+</script>
+</body>
+</html>

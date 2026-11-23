@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>House Label: HL 047</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FAFAF7;--black:#000;--grey:#666662;--well:#E9E9E4;--ink:#1F4BD8;--on-ink:#fff;
+  --sans:'Archivo',system-ui,sans-serif;--serif:'Newsreader',Georgia,serif}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--paper);color:var(--black);font:400 14px/1.4 var(--sans);font-variation-settings:'wdth' 100;height:100vh;overflow:hidden;display:grid;grid-template-rows:64px minmax(0,1fr);-webkit-font-smoothing:antialiased}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--black);outline-offset:2px}
+.serif{font-family:var(--serif)}
+.grey{color:var(--grey)}
+.num{font-variant-numeric:tabular-nums}
+
+header{display:flex;align-items:center;gap:36px;padding:0 28px;border-bottom:3px solid var(--black)}
+.mark{font:900 26px/1 var(--sans);font-variation-settings:'wdth' 125;letter-spacing:-.01em}
+nav{display:flex;gap:4px;height:100%}
+nav button{border:0;background:none;padding:0 12px;cursor:pointer;font-weight:500;color:var(--grey);border-bottom:3px solid transparent;margin-bottom:-3px}
+nav button[aria-current=page]{color:var(--black);border-bottom-color:var(--ink)}
+@media(hover:hover){nav button:hover{color:var(--black)}}
+.dist{margin-left:auto;display:flex;align-items:center;gap:20px;color:var(--grey);font-size:13px}
+.dist b{font-weight:500;color:var(--black)}
+.dist a{color:var(--grey)}
+.sq{display:inline-block;width:9px;height:9px;background:var(--black);margin-right:7px}
+.sq.off{background:none;box-shadow:inset 0 0 0 1.5px var(--grey)}
+
+main{min-height:0;display:grid}
+.v-week{grid-template-columns:440px 248px minmax(0,1fr)}
+.v-disco{grid-template-columns:minmax(0,1fr) 520px}
+.v-cat{grid-template-columns:320px minmax(0,1fr)}
+.scroll{min-height:0;overflow:auto}
+
+/* Cover */
+.cover{background:var(--ink);color:var(--on-ink);display:flex;flex-direction:column;overflow:hidden;position:relative}
+.cover-h{height:72px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 24px 14px 40px;font-weight:600;font-size:13px}
+.cover-h .cat{font:900 30px/1 var(--sans);font-variation-settings:'wdth' 62;letter-spacing:.01em}
+.stack{position:relative;height:640px;margin-left:40px;border-top:2px solid var(--on-ink)}
+.stack.over{border-bottom:10px solid var(--black)}
+.ticks{position:absolute;left:-40px;top:0;width:40px;height:640px;pointer-events:none}
+.ticks span{position:absolute;left:8px;font-size:10.5px;font-weight:600;transform:translateY(-50%);opacity:.75}
+.ticks i{position:absolute;right:0;width:8px;border-top:1.5px solid var(--on-ink);opacity:.75}
+.notch{position:absolute;left:-40px;right:0;top:320px;border-top:2px dashed var(--paper);opacity:.6;pointer-events:none;z-index:1}
+.notch::before{content:'';position:absolute;left:0;top:-8px;border:7px solid transparent;border-left:12px solid var(--paper)}
+.rows{height:640px;overflow:hidden}
+.crow{display:grid;grid-template-columns:auto minmax(0,1fr) auto 0px;align-items:center;column-gap:12px;padding-right:20px;border-bottom:1.5px solid color-mix(in srgb,var(--on-ink) 35%,transparent);cursor:grab;position:relative;background:var(--ink)}
+.crow .duo{height:calc(100% - 6px);aspect-ratio:1;display:block;background:var(--ink);position:relative;overflow:hidden}
+.crow .duo svg{width:100%;height:100%;display:block;filter:grayscale(1) contrast(1.15) brightness(1.1);mix-blend-mode:multiply}
+.crow .nm{font-weight:800;font-variation-settings:'wdth' 62;line-height:.9;white-space:nowrap;overflow:hidden;text-transform:uppercase;letter-spacing:-.005em}
+.crow .du{font-size:12px;font-weight:600;font-variant-numeric:tabular-nums}
+.crow .off{position:absolute;right:58px;top:50%;transform:translateY(-50%);border:0;background:var(--on-ink);color:var(--ink);font-size:12px;font-weight:600;height:24px;padding:0 9px;cursor:pointer;display:none}
+@media(hover:hover){.crow:hover .off{display:block}}
+.crow:focus-within .off{display:block}
+.crow.dragging{opacity:.4}
+.crow.drop{box-shadow:inset 0 3px 0 var(--on-ink)}
+.cover-empty{padding:24px 24px 0 0;font:500 22px/1.2 var(--sans);font-variation-settings:'wdth' 75;max-width:22ch}
+.cover-f{margin-top:auto;padding:14px 24px 18px 40px;font-size:12.5px;font-weight:500;display:flex;justify-content:space-between}
+
+/* Credits */
+.credits{border-right:3px solid var(--black);padding:22px 22px 24px;display:flex;flex-direction:column;gap:22px;overflow:auto}
+.big{font:800 56px/.9 var(--sans);font-variation-settings:'wdth' 75;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.big small{font-size:24px;font-weight:700;margin:0 6px 0 2px}
+.state{margin:8px 0 0;font-size:13.5px}
+.state.warn{color:#B0122A}
+.ch{font-weight:700;font-size:12.5px;margin:0 0 8px;font-variation-settings:'wdth' 100}
+.gbar{display:flex;height:22px;border:1.5px solid var(--black)}
+.gbar i{display:block;height:100%;border-right:1.5px solid var(--black)}
+.gbar i:last-child{border-right:0}
+.glist{margin:10px 0 0;padding:0;list-style:none;display:grid;gap:4px;font-size:13px}
+.glist li{display:grid;grid-template-columns:14px 1fr auto;gap:8px;align-items:center}
+.glist li i{width:14px;height:14px;border:1.5px solid var(--black)}
+.f-jazz{background:var(--ink)}
+.f-electronic{background:color-mix(in srgb,var(--ink) 60%,var(--paper))}
+.f-rnb{background:color-mix(in srgb,var(--ink) 28%,var(--paper))}
+.f-rock{background:repeating-linear-gradient(45deg,var(--ink) 0 2px,var(--paper) 2px 6px)}
+.f-folk{background:radial-gradient(var(--ink) 1.3px,var(--paper) 1.6px) 0 0/6px 6px}
+.f-ambient{background:var(--paper)}
+.src{font-size:13.5px;margin:0}
+.rules{margin:0;padding:0;list-style:none;display:grid;gap:5px;font-size:13px}
+.rules li{display:grid;grid-template-columns:14px 1fr auto;gap:8px;align-items:center}
+.rules li i{width:10px;height:10px;background:var(--black)}
+.rules li.miss i{background:none;box-shadow:inset 0 0 0 1.5px #B0122A}
+.rules li.miss{color:#B0122A}
+.inks{display:flex;gap:6px}
+.inks button{width:26px;height:26px;border:0;cursor:pointer;padding:0}
+.inks button[aria-pressed=true]{box-shadow:0 0 0 2px var(--paper),0 0 0 4px var(--black)}
+.release{margin-top:auto;border:0;background:var(--black);color:var(--paper);height:48px;font-weight:700;font-size:14px;cursor:pointer;text-align:left;padding:0 16px}
+@media(hover:hover){.release:hover{background:var(--ink);color:var(--on-ink)}}
+.release:active{transform:scale(.98)}
+
+/* A&R desk */
+.desk{padding:22px 32px 48px}
+.desk-h{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px}
+.desk-h h1{margin:0;font:800 30px/1 var(--sans);font-variation-settings:'wdth' 75}
+.lane{padding:20px 0 22px;border-bottom:1.5px solid var(--black)}
+.lane:last-child{border-bottom:0}
+.lane-h{display:flex;align-items:baseline;gap:10px;margin-bottom:4px}
+.lane-h h2{margin:0;font:700 22px/1.1 var(--sans);font-variation-settings:'wdth' 85}
+.lane-h .n{font-weight:600;color:var(--grey)}
+.lane-h p{margin:0 0 0 auto;color:var(--grey);font-size:13px}
+.sleeves{display:grid;grid-template-columns:repeat(auto-fill,124px);gap:24px 20px;margin-top:14px}
+.sl{width:124px;border:0;background:none;padding:0;text-align:left;cursor:pointer;display:flex;flex-direction:column;justify-content:flex-start;align-self:start}
+.sl p{width:100%}
+.sl .art{width:124px;height:124px;display:block;position:relative;background:var(--well)}
+.sl .art svg{width:100%;height:100%;display:block}
+.sl .art .add{position:absolute;left:0;right:0;bottom:0;background:var(--black);color:var(--paper);font-size:12px;font-weight:700;padding:6px 8px;display:none}
+@media(hover:hover){.sl:hover .art .add{display:block}}
+.sl:focus-visible .art .add{display:block}
+.sl.on .art::after{content:'';position:absolute;inset:0;background:var(--ink);mix-blend-mode:multiply;opacity:.85}
+.sl.on .art .add{display:block;background:var(--ink);color:var(--on-ink);z-index:1}
+.sl .a{margin:9px 0 0;font-weight:700;font-size:13.5px;line-height:1.2}
+.sl .t{margin:1px 0 0;font:italic 400 15px/1.2 var(--serif)}
+.sl .r{margin:6px 0 0;font-size:12px;color:var(--grey);line-height:1.3}
+.sl .l{margin:4px 0 0;font-size:12px;font-weight:600;font-variant-numeric:tabular-nums}
+.search{width:124px;height:124px;border:1.5px dashed var(--black);display:flex;flex-direction:column;justify-content:flex-end;padding:10px;gap:6px}
+.search input{width:100%;border:0;border-bottom:1.5px solid var(--black);background:none;padding:2px 0;outline:none;font-size:13px}
+.search span{font-size:12px;font-weight:700}
+
+/* Discography */
+.wall{padding:28px 32px 48px}
+.wall h1,.notes h1,.record h1{margin:0}
+.wall h1{font:800 30px/1 var(--sans);font-variation-settings:'wdth' 75}
+.wall>p{margin:6px 0 0;color:var(--grey)}
+.covers{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:28px 22px;margin-top:24px}
+.mini{border:0;padding:0;background:none;text-align:left;cursor:pointer}
+.mini .face{aspect-ratio:3/4;display:flex;flex-direction:column;padding:10% 8% 6% 12%;overflow:hidden}
+.mini .face .c{font:900 clamp(16px,2vw,26px)/1 var(--sans);font-variation-settings:'wdth' 62;margin-bottom:8%}
+.mini .face .st{flex:1;border-top:1.5px solid currentColor;overflow:hidden;container-type:size}
+.mini .face .st div{font-size:calc(var(--p) * .78cqh);font-weight:800;font-variation-settings:'wdth' 62;text-transform:uppercase;line-height:.92;white-space:nowrap;overflow:hidden;border-bottom:1px solid color-mix(in srgb,currentColor 35%,transparent);display:flex;align-items:center}
+.mini .meta{margin:9px 0 0;font-size:12.5px;display:flex;justify-content:space-between}
+.mini .meta b{font-weight:700}
+.mini[aria-pressed=true] .face{box-shadow:0 0 0 3px var(--paper),0 0 0 6px var(--black)}
+.mini.draft .face{opacity:1}
+.notes{border-left:3px solid var(--black);padding:28px 32px 48px}
+.notes .cat{font:900 44px/1 var(--sans);font-variation-settings:'wdth' 62}
+.notes h1{font:italic 400 26px/1.2 var(--serif);margin-top:6px}
+.notes .sum{color:var(--grey);margin:6px 0 18px}
+.ln{display:grid;grid-template-columns:22px minmax(0,1fr) auto;gap:4px 12px;padding:12px 0;border-top:1.5px solid var(--black);align-items:start}
+.ln .k{width:16px;height:16px;margin-top:3px;box-shadow:inset 0 0 0 1.5px var(--black)}
+.ln.keeper .k{background:var(--ink);box-shadow:none}
+.ln.no .who{text-decoration:line-through;color:var(--grey)}
+.ln .who b{font-weight:700}
+.ln .who em{font:italic 400 16px var(--serif);display:block}
+.vd{grid-column:2/4;display:flex;gap:6px;margin-top:4px}
+.vd button{border:1.5px solid var(--black);background:none;height:28px;padding:0 10px;font-size:12.5px;font-weight:600;cursor:pointer}
+.vd button[aria-pressed=true]{background:var(--black);color:var(--paper)}
+@media(hover:hover){.vd button:hover{background:var(--well)}.vd button[aria-pressed=true]:hover{background:var(--black)}}
+.roster{margin-top:28px}
+.roster h2{font:700 18px var(--sans);font-variation-settings:'wdth' 85;margin:0 0 8px}
+.roster dl{display:grid;grid-template-columns:110px 1fr;gap:6px 12px;margin:0;font-size:13.5px}
+.roster dt{font-weight:600}
+.roster dd{margin:0}
+
+/* Catalog */
+.clist{border-right:3px solid var(--black);padding:20px 0}
+.clist h2{margin:0 20px 10px;font:700 18px var(--sans);font-variation-settings:'wdth' 85}
+.ci{display:grid;grid-template-columns:36px minmax(0,1fr);gap:10px;align-items:center;width:100%;border:0;background:none;padding:6px 20px;text-align:left;cursor:pointer}
+.ci span:first-child{width:36px;height:36px;display:block}
+.ci svg{width:100%;height:100%;display:block}
+.ci b{display:block;font-weight:600;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ci em{display:block;font:italic 400 14px var(--serif);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ci[aria-current=true]{background:var(--ink);color:var(--on-ink)}
+@media(hover:hover){.ci:hover{background:var(--well)}.ci[aria-current=true]:hover{background:var(--ink)}}
+.record{padding:32px 40px 56px;display:grid;grid-template-columns:360px minmax(0,1fr);gap:40px;max-width:1080px}
+.record .sleeve{width:360px;height:360px;display:block}
+.record .sleeve svg{width:100%;height:100%;display:block}
+.record .by{font-weight:700;font-size:15px;margin:0}
+.record h1{font:italic 400 40px/1.1 var(--serif);margin:4px 0 20px}
+.facts{display:grid;grid-template-columns:130px 1fr;border-top:1.5px solid var(--black);margin:0}
+.facts dt,.facts dd{margin:0;padding:8px 0;border-bottom:1px solid var(--well);font-size:14px}
+.facts dt{font-weight:600}
+.distro{grid-column:1/3}
+.distro h2{font:800 24px/1 var(--sans);font-variation-settings:'wdth' 75;margin:0}
+.distro>p{margin:6px 0 14px;color:var(--grey)}
+.dt{width:100%;border-collapse:collapse;font-size:14px}
+.dt td{padding:12px 12px 12px 0;border-top:1.5px solid var(--black)}
+.dt tr:last-child td{border-bottom:1.5px solid var(--black)}
+.dt td:first-child{font-weight:700;width:180px}
+.dt td:last-child{text-align:right;white-space:nowrap}
+.dt .b{border:1.5px solid var(--black);background:none;height:30px;padding:0 12px;font-weight:600;font-size:13px;cursor:pointer;margin-left:6px}
+.dt .b.solid{background:var(--black);color:var(--paper)}
+.toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%);background:var(--black);color:var(--paper);padding:14px 20px;font-weight:600;z-index:10}
+</style>
+</head>
+<body>
+<header></header>
+<main></main>
+<script src="data.js"></script>
+<script src="common.js"></script>
+<script>
+{
+const { D, byId, secs, cover, fmtHM, fmtDur, esc, genreName, weekRange, shortDate, policy, recordFor } = MIX;
+const INKS = [['Cobalt', '#1F4BD8', '#fff'], ['Viridian', '#0B7A63', '#fff'], ['Carmine', '#C8243C', '#fff'], ['Tangerine', '#F0641E', '#000'], ['Ochre', '#E0A100', '#000']];
+const PAST_INK = { 46: 2, 45: 1, 44: 4 };
+const LANES = [['new', 'Out this week'], ['discover', 'New signings'], ['vault', 'Reissues'], ['explore', 'Follow-ups']];
+const VERD = [['keeper', 'Keeper'], ['more', 'Sign them'], ['no', 'Dropped']];
+const PX_H = 80, MAXS = 8 * 3600, MINS = 4 * 3600;
+const S = { view: 'week', mix: [...D.mix], ink: 0, released: false, pick: 46, hist: structuredClone(D.history), rec: D.record.albumId, q: '' };
+const $ = s => document.querySelector(s);
+const total = () => S.mix.reduce((t, id) => t + secs(byId[id]), 0);
+const setInk = i => { document.documentElement.style.setProperty('--ink', INKS[i][1]); document.documentElement.style.setProperty('--on-ink', INKS[i][2]); };
+
+function header() {
+  return `<div class="mark">House Label</div>
+  <nav>${[['week', 'This week'], ['disco', 'Discography'], ['cat', 'Catalog']].map(([v, l]) => `<button data-act="view" data-v="${v}" ${S.view === v ? 'aria-current="page"' : ''}>${l}</button>`).join('')}</nav>
+  <div class="dist"><span><i class="sq"></i><b>Spotify</b> linked</span><span><i class="sq off"></i>Apple Music</span><a href="./">All directions</a></div>`;
+}
+
+// ---------- This week ----------
+function coverPanel() {
+  const t = total();
+  let ticks = '';
+  for (let h = 1; h <= 8; h++) ticks += `<i style="top:${h * PX_H}px"></i>${h % 2 === 0 ? `<span style="top:${h * PX_H}px">${h}h</span>` : ''}`;
+  const rows = S.mix.map(id => {
+    const a = byId[id], hpx = secs(a) / 3600 * PX_H, fs = Math.min(hpx * .8, 60);
+    return `<div class="crow" draggable="true" data-id="${id}" style="height:${hpx}px"><span class="duo">${cover(a)}</span>
+      <span class="nm" style="font-size:${fs}px" title="${esc(a.artist)}, ${esc(a.title)}">${esc(a.artist)}</span><span class="du">${fmtDur(secs(a))}</span>
+      <button class="off" data-act="off" data-id="${id}" data-focus="off-${id}">Take off</button><span></span></div>`;
+  }).join('');
+  return `<section class="cover">
+    <div class="cover-h"><span class="cat">${D.week.catalogNo}</span><span>${weekRange(D.week.starts)}</span></div>
+    <div class="stack${t > MAXS ? ' over' : ''}"><div class="ticks">${ticks}</div><div class="notch" title="4 hours"></div>
+      <div class="rows">${rows || `<p class="cover-empty">Nothing pressed yet. Add an album and the cover starts setting itself.</p>`}</div></div>
+    <div class="cover-f"><span>${S.released ? 'Released' : 'Unreleased'}</span><span>Drag rows to reorder</span></div></section>`;
+}
+function credits() {
+  const items = S.mix.map(id => byId[id]), t = total();
+  const g = D.genres.map(x => ({ ...x, s: items.filter(a => a.genre === x.id).reduce((n, a) => n + secs(a), 0) })).filter(x => x.s);
+  const state = t < MINS ? `${fmtHM((MINS - t) / 60)} short of a release.` : t > MAXS ? `${fmtHM((t - MAXS) / 60)} over. Take one off or let it run long.` : `Within 4 to 8 hours. ${fmtHM((MAXS - t) / 60)} of room left.`;
+  const n = k => items.filter(a => a.lane === k).length;
+  const src = [[n('new'), 'new'], [n('vault'), n('vault') === 1 ? 'reissue' : 'reissues'], [n('discover'), n('discover') === 1 ? 'new signing' : 'new signings'], [n('explore'), n('explore') === 1 ? 'follow-up' : 'follow-ups']].filter(x => x[0]).map(x => x.join(' ')).join(', ');
+  const h = Math.floor(t / 3600), m = Math.round(t % 3600 / 60);
+  return `<section class="credits">
+    <div><div class="big">${h}<small>h</small>${String(m).padStart(2, '0')}<small>min</small></div><p class="grey" style="margin:6px 0 0">${items.length} albums</p>
+      <p class="state${t < MINS || t > MAXS ? ' warn' : ''}">${state}</p></div>
+    <div><p class="ch">Genres</p><div class="gbar">${g.map(x => `<i class="f-${x.id}" style="flex:${x.s}" title="${x.name}"></i>`).join('')}</div>
+      <ul class="glist">${g.map(x => `<li><i class="f-${x.id}"></i><span>${x.name}</span><span class="num">${Math.round(x.s / t * 100)}%</span></li>`).join('')}</ul></div>
+    <div><p class="ch">Sources</p><p class="src">${src || 'None yet'}</p></div>
+    <div><p class="ch">House rules</p><ul class="rules">${policy(items).map(p => `<li class="${p.ok ? '' : 'miss'}"><i></i><span>${p.label}</span><span class="num">${p.ok ? '' : p.value}</span></li>`).join('')}</ul></div>
+    <div><p class="ch">Ink for ${D.week.catalogNo}</p><div class="inks">${INKS.map((k, i) => `<button style="background:${k[1]}" data-act="ink" data-i="${i}" data-focus="ink-${i}" aria-pressed="${S.ink === i}" aria-label="${k[0]}"></button>`).join('')}</div></div>
+    <button class="release" data-act="release">${S.released ? 'Update the Spotify playlist' : 'Release as a Spotify playlist'}</button></section>`;
+}
+function sleeve(a) {
+  const on = S.mix.includes(a.id);
+  return `<button class="sl${on ? ' on' : ''}" data-act="toggle" data-id="${a.id}" data-focus="sl-${a.id}"><span class="art">${cover(a)}<span class="add">${on ? 'On the release' : 'Add to release'}</span></span>
+    <p class="a">${esc(a.artist)}</p><p class="t">${esc(a.title)}</p><p class="r">${esc(a.reason)}</p><p class="l">${a.year}, ${fmtDur(secs(a))}</p></button>`;
+}
+function desk() {
+  return `<section class="scroll"><div class="desk"><div class="desk-h"><h1>A&amp;R desk</h1><span class="grey">${D.albums.length} candidates from your follows, plays and history</span></div>
+    ${LANES.map(([id, name]) => {
+      const list = D.albums.filter(a => a.lane === id), lane = D.lanes.find(l => l.id === id);
+      return `<section class="lane"><div class="lane-h"><h2>${name}</h2><span class="n">${list.length}</span><p>${lane.desc}</p></div>
+        <div class="sleeves">${list.map(sleeve).join('')}${id === 'discover' ? `<label class="search"><span>Sign someone new</span><input placeholder="Search albums" data-focus="search" value="${esc(S.q)}"></label>` : ''}</div></section>`;
+    }).join('')}</div></section>`;
+}
+
+// ---------- Discography ----------
+function miniFace(no, items, inkIdx, draft) {
+  const t = items.reduce((n, a) => n + a.minutes, 0);
+  return `<div class="face" style="background:${INKS[inkIdx][1]};color:${INKS[inkIdx][2]}"><div class="c">${no}</div><div class="st">${items.map(a => { const pct = a.minutes / 480 * 100; return `<div style="height:${pct}%;--p:${pct.toFixed(2)}">${esc(a.artist)}</div>`; }).join('')}</div></div>`;
+}
+function disco() {
+  const cur = { week: D.week.number, catalogNo: D.week.catalogNo, starts: D.week.starts, items: S.mix.map(id => ({ ...byId[id], verdict: null })), draft: true };
+  const all = [cur, ...S.hist];
+  const w = all.find(x => x.week === S.pick) || S.hist[0];
+  const c = k => w.items.filter(a => a.verdict === k).length;
+  const last = {};
+  [...S.hist].reverse().forEach(x => x.items.forEach(a => { last[a.artist] = a.verdict; }));
+  const grp = k => Object.entries(last).filter(([, v]) => v === k).map(([n]) => esc(n)).join(', ') || 'None';
+  return `<section class="scroll"><div class="wall"><h1>Discography</h1><p>${all.length} releases. Each cover is set from what went on it.</p>
+    <div class="covers">${all.map(x => `<button class="mini${x.draft ? ' draft' : ''}" data-act="pick" data-w="${x.week}" data-focus="mini-${x.week}" aria-pressed="${S.pick === x.week}">${miniFace(x.catalogNo, x.items, x.draft ? S.ink : PAST_INK[x.week], x.draft)}
+      <p class="meta"><b>${x.catalogNo}</b><span class="num">${fmtHM(x.items.reduce((n, a) => n + a.minutes, 0))}</span></p>
+      <p class="meta grey" style="margin-top:2px"><span>${x.draft ? (S.released ? 'Out now' : 'In the works') : `${x.items.filter(a => a.verdict === 'keeper').length} keepers`}</span><span>${shortDate(x.starts)}</span></p></button>`).join('')}</div></div></section>
+  <section class="scroll notes"><div class="cat">${w.catalogNo}</div><h1>Liner notes, ${weekRange(w.starts)}</h1>
+    <p class="sum">${w.items.length} albums, ${fmtHM(w.items.reduce((n, a) => n + a.minutes, 0))}.${w.draft ? ' Rate these once the week is out.' : ` ${c('keeper')} keepers, ${c('more')} to sign, ${c('no')} dropped.`}</p>
+    ${w.items.map((a, i) => `<div class="ln ${a.verdict || ''}"><span class="k"></span><div class="who"><b>${esc(a.artist)}</b><em>${esc(a.title)}</em></div><span class="grey num">${fmtDur(secs(a))}</span>
+      ${w.draft ? '' : `<div class="vd">${VERD.map(([k, l]) => `<button data-act="verdict" data-w="${w.week}" data-i="${i}" data-k="${k}" data-focus="vd-${w.week}-${i}-${k}" aria-pressed="${a.verdict === k}">${l}</button>`).join('')}</div>`}</div>`).join('')}
+    <div class="roster"><h2>Roster</h2><dl><dt>Signed</dt><dd>${grp('more')}</dd><dt>Keepers</dt><dd>${grp('keeper')}</dd><dt>Dropped</dt><dd>${grp('no')}</dd></dl></div></section>`;
+}
+
+// ---------- Catalog ----------
+function catalog() {
+  const a = byId[S.rec], r = recordFor(a);
+  const on = [...S.hist.filter(w => w.items.some(x => x.title === a.title)).map(w => w.catalogNo), ...(S.mix.includes(a.id) ? [D.week.catalogNo] : [])];
+  return `<section class="scroll clist"><h2>Catalog</h2>${D.albums.map(x => `<button class="ci" data-act="rec" data-id="${x.id}" data-focus="ci-${x.id}" aria-current="${x.id === S.rec}"><span>${cover(x)}</span><span><b>${esc(x.artist)}</b><em>${esc(x.title)}</em></span></button>`).join('')}</section>
+  <section class="scroll"><div class="record"><span class="sleeve">${cover(a)}</span>
+    <div><p class="by">${r.artists.map(esc).join(', ')}</p><h1>${esc(a.title)}</h1>
+      <dl class="facts"><dt>Released</dt><dd>${r.released}</dd>${r.label ? `<dt>Label</dt><dd>${esc(r.label)}</dd>` : ''}<dt>Length</dt><dd class="num">${fmtDur(secs(a))}</dd><dt>Tracks</dt><dd>${r.tracks}</dd><dt>Genre</dt><dd>${genreName(a.genre)}</dd><dt>Catalog no.</dt><dd class="num">${r.catalogId}</dd><dt>Appears on</dt><dd>${on.length ? on.join(', ') : 'No release yet'}</dd></dl>
+      ${r.notes ? `<p class="serif" style="font-size:17px;font-style:italic;margin:18px 0 0">“${esc(r.notes)}”</p>` : ''}</div>
+    <div class="distro"><h2>Distribution</h2><p>This record is in your catalog. Distributors are where it plays.</p>
+      <table class="dt">${r.services.map((s, i) => `<tr><td>${s.name}</td><td class="${s.status === 'linked' ? '' : 'grey'}">${s.status === 'linked' ? `Linked${s.id ? `, <span class="num">${esc(s.id)}</span>` : ''}` : s.status === 'search' ? `Looking for a match on ${s.name}` : 'Not linked'}</td>
+        <td>${s.status === 'linked' ? `<button class="b" data-act="unlink" data-i="${i}" data-focus="svc-${i}">Unlink</button><button class="b solid" data-act="noop">Open</button>` : `<button class="b solid" data-act="link" data-i="${i}" data-focus="svc-${i}" ${s.status === 'search' ? 'disabled' : ''}>Find a match</button>`}</td></tr>`).join('')}</table></div></div></section>`;
+}
+
+function render() {
+  const fk = document.activeElement?.dataset?.focus;
+  const tops = [...document.querySelectorAll('main .scroll')].map(p => p.scrollTop);
+  setInk(S.ink);
+  $('header').innerHTML = header();
+  const m = $('main');
+  const same = m.dataset.v === S.view;
+  m.dataset.v = S.view; m.className = 'v-' + S.view;
+  m.innerHTML = S.view === 'week' ? coverPanel() + credits() + desk() : S.view === 'disco' ? disco() : catalog();
+  if (same) document.querySelectorAll('main .scroll').forEach((p, i) => { if (tops[i] != null) p.scrollTop = tops[i]; });
+  if (fk) document.querySelector(`[data-focus="${fk}"]`)?.focus({ preventScroll: true });
+}
+function toast(msg) { document.querySelector('.toast')?.remove(); const t = document.createElement('div'); t.className = 'toast'; t.textContent = msg; document.body.append(t); setTimeout(() => t.remove(), 4200); }
+
+document.addEventListener('click', e => {
+  const el = e.target.closest('[data-act]'); if (!el) return;
+  const { act, id } = el.dataset;
+  if (act === 'view') { S.view = el.dataset.v; render(); }
+  else if (act === 'toggle') { S.mix = S.mix.includes(id) ? S.mix.filter(x => x !== id) : [...S.mix, id]; render(); }
+  else if (act === 'off') { S.mix = S.mix.filter(x => x !== id); render(); }
+  else if (act === 'ink') { S.ink = +el.dataset.i; render(); }
+  else if (act === 'release') {
+    if (!S.mix.length) return toast('Nothing to release. Add an album first.');
+    S.released = true; render(); toast(`${D.week.catalogNo} is out: ${S.mix.length} albums, ${fmtHM(total() / 60)}.`);
+  }
+  else if (act === 'pick') { S.pick = +el.dataset.w; render(); }
+  else if (act === 'verdict') { const it = S.hist.find(w => w.week === +el.dataset.w).items[+el.dataset.i]; it.verdict = it.verdict === el.dataset.k ? null : el.dataset.k; render(); }
+  else if (act === 'rec') { S.rec = id; render(); }
+  else if (act === 'link') { const s = recordFor(byId[S.rec]).services[+el.dataset.i]; s.status = 'search'; render(); setTimeout(() => { s.status = 'linked'; s.id = 'matched by UPC'; render(); }, 900); }
+  else if (act === 'unlink') { const s = recordFor(byId[S.rec]).services[+el.dataset.i]; s.status = 'unlinked'; delete s.id; render(); }
+});
+document.addEventListener('input', e => { if (e.target.dataset.focus === 'search') S.q = e.target.value; });
+document.addEventListener('keydown', e => {
+  if (e.target.dataset?.focus === 'search' && e.key === 'Enter') {
+    const s = S.q.trim().toLowerCase(), hit = D.albums.find(a => !S.mix.includes(a.id) && (a.artist + ' ' + a.title).toLowerCase().includes(s));
+    if (s && hit) { S.mix.push(hit.id); S.q = ''; render(); toast(`Signed: ${hit.artist}, ${hit.title}.`); }
+    else if (s) toast(`Nothing in the catalog matches “${S.q}”.`);
+  }
+});
+// Drag rows on the cover to reorder.
+let drag = null;
+document.addEventListener('dragstart', e => { const r = e.target.closest('.crow'); if (!r) return; drag = r.dataset.id; r.classList.add('dragging'); e.dataTransfer.effectAllowed = 'move'; });
+document.addEventListener('dragover', e => { const r = e.target.closest('.crow'); if (!r || !drag) return; e.preventDefault(); document.querySelectorAll('.crow.drop').forEach(x => x.classList.remove('drop')); r.classList.add('drop'); });
+document.addEventListener('drop', e => {
+  const r = e.target.closest('.crow'); if (!r || !drag) return; e.preventDefault();
+  const to = r.dataset.id; if (to !== drag) { S.mix = S.mix.filter(x => x !== drag); S.mix.splice(S.mix.indexOf(to), 0, drag); }
+  drag = null; render();
+});
+document.addEventListener('dragend', () => { drag = null; document.querySelectorAll('.dragging,.drop').forEach(x => x.classList.remove('dragging', 'drop')); });
+
+render();
+}
+</script>
+</body>
+</html>

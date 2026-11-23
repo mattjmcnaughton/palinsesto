@@ -21,6 +21,7 @@ from palinsesto.config import Settings
 from palinsesto.db import get_session
 from palinsesto.models.connections import connections
 from palinsesto.oidc import OIDCProvider
+from palinsesto.services.browser_auth import provision
 from tests.fakes import spotify_server as spotify
 from tests.oidc_fixture import SyntheticOIDC
 
@@ -74,6 +75,10 @@ class Harness:
             return await client.request(
                 request.method, url, content=request.content, headers=request.headers
             )
+
+    async def provision(self):
+        async with self.sessions() as db, db.begin():
+            await provision(db, self.oidc.issuer, "synthetic-user")
 
     async def sign_in(self):
         login = await self.browser.get("/api/auth/login")
@@ -130,9 +135,18 @@ def run(scenario):
 CREDENTIALS = {"client_id": spotify.CLIENT_ID, "client_secret": spotify.CLIENT_SECRET}
 
 
-def test_first_sign_in_provisions_one_owned_workspace():
+def test_sign_in_needs_an_operator_provisioned_identity():
     async def scenario(h):
         assert (await h.browser.get("/api/auth/session")).status_code == 401
+        # An allowlisted email alone is not enough: no account is created.
+        login = await h.browser.get("/api/auth/login")
+        auth = await h.oidc_request(httpx.Request("GET", login.headers["location"]))
+        refused = await h.browser.get(auth.headers["location"])
+        assert refused.status_code == 403
+        assert refused.json()["detail"]["code"] == "identity_setup_required"
+        assert (await h.browser.get("/api/auth/session")).status_code == 401
+
+        await h.provision()
         first = await h.sign_in()
         desk = await h.call("GET", "/desk")
         assert desk["spotify"] == {"state": "not_set_up"}
@@ -151,6 +165,7 @@ def test_first_sign_in_provisions_one_owned_workspace():
 
 def test_programming_a_week_from_spotify_to_the_log_book():
     async def scenario(h):
+        await h.provision()
         await h.sign_in()
         desk = await h.call("PUT", "/spotify/credentials", json=CREDENTIALS)
         assert desk["spotify"]["state"] == "credentials"
@@ -229,6 +244,7 @@ def test_programming_a_week_from_spotify_to_the_log_book():
 
 def test_policy_validation():
     async def scenario(h):
+        await h.provision()
         await h.sign_in()
         policy = (await h.call("GET", "/desk"))["policy"]
         desk = await h.call("PUT", "/policy", json={**policy, "min_gold": 3})
@@ -241,6 +257,7 @@ def test_policy_validation():
 
 def test_each_setup_error_is_stored_with_its_fix():
     async def scenario(h):
+        await h.provision()
         await h.sign_in()
         wrong = {**CREDENTIALS, "client_secret": "0" * 32}
         refused = await h.call("PUT", "/spotify/credentials", status=409, json=wrong)
@@ -282,6 +299,7 @@ def test_each_setup_error_is_stored_with_its_fix():
 
 def test_cancelled_consent_is_access_denied():
     async def scenario(h):
+        await h.provision()
         await h.sign_in()
         await h.call("PUT", "/spotify/credentials", json=CREDENTIALS)
         start = await h.browser.get(h.path("/spotify/connect"))

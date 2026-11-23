@@ -6,7 +6,7 @@ Palinsesto, Italian for a broadcast schedule, is a desk for programming one week
 
 | Term | Meaning |
 | --- | --- |
-| User | A signed-in identity (Auth0 issuer and subject). An admitted User gets a Workspace on first sign-in. |
+| User | A signed-in identity (Auth0 issuer and subject). An operator provisions each User and its Workspace (`palinsesto.bootstrap`); sign-in never creates one. |
 | Workspace | The single-owner boundary for every musical record: catalog, weeks, policy, signals and the service connection. `workspace.owner_id` is its only member for now. |
 | Catalog | The Workspace's own artists and albums. It is the source of truth; services are links on it. |
 | Album, Artist | Catalog records. An album has a release date, length, track count, genre, optional label and UPC, artwork and a note. |

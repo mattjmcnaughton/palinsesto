@@ -14,7 +14,7 @@ Every `/api` route answers JSON with `Cache-Control: no-store`. Errors are `{"de
 | Method | Path | Description |
 | --- | --- | --- |
 | GET | `/api/auth/login` | Redirect to Auth0 (code flow with PKCE and nonce) |
-| GET | `/api/auth/callback` | Finish sign-in; provisions a User and Workspace on first admitted sign-in |
+| GET | `/api/auth/callback` | Finish sign-in. 403 `identity_not_admitted` for an email not on the allowlist, 403 `identity_setup_required` for an identity nobody provisioned |
 | GET | `/api/auth/session` | `{user, workspace, csrf_token}`, or 401 |
 | POST | `/api/auth/logout` | Revoke the session |
 

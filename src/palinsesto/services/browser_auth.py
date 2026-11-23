@@ -73,11 +73,11 @@ async def consume_login(session, state, binding):
 
 
 async def admit_identity(session, claims, config):
-    """Admit a verified, allowlisted email; give a new identity its Workspace.
+    """Admit a verified, allowlisted email whose identity an operator provisioned.
 
-    Unlike Accanto, an admitted identity is provisioned on first sign-in: the
-    email allowlist is the gate, and each User gets one Workspace they own.
-    Identities are keyed by issuer and subject; matching email never links them.
+    As in Accanto there are two gates: the email allowlist, and a User row for
+    the exact issuer and subject, created by ``python -m palinsesto.bootstrap``.
+    Matching email never links or creates accounts.
     """
     if (
         claims.get("iss") != config.oidc_issuer
@@ -95,7 +95,11 @@ async def admit_identity(session, claims, config):
             )
         )
         if user is None:
-            user = await provision(session, config.oidc_issuer, claims["sub"])
+            raise RejectionError(
+                "identity_setup_required",
+                "An operator must provision this identity before sign-in.",
+                403,
+            )
         return await issue_session(session, user)
 
 

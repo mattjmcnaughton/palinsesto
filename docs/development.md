@@ -54,7 +54,7 @@ SPOTIFY_ACCOUNTS_URL=http://127.0.0.1:55440 SPOTIFY_API_URL=http://127.0.0.1:554
 uv run uvicorn palinsesto.app:app --port 55438
 ```
 
-Open http://127.0.0.1:55438, sign in, and in Settings enter the fake's client ID `0123456789abcdef0123456789abcdef` and secret `fedcba9876543210fedcba9876543210`. Never expose the auto-approving OIDC fixture publicly. In an orb, run these with `amp orb service start`.
+Provision the fixture's identity once, with `uv run python -m palinsesto.bootstrap --issuer http://127.0.0.1:55439 --subject synthetic-user`. Then open http://127.0.0.1:55438, sign in, and in Settings enter the fake's client ID `0123456789abcdef0123456789abcdef` and secret `fedcba9876543210fedcba9876543210`. Never expose the auto-approving OIDC fixture publicly. In an orb, run these with `amp orb service start`.
 
 ## Migrations
 

@@ -71,8 +71,15 @@ amp boxes exec mattjmcnaughton/apps \
 
 - A 503 from `/api/auth/login`: issuer, origin, client ID or CSRF secret missing.
 - `identity_not_admitted`: wrong issuer, unverified email, or an email not in
-  `OIDC_ALLOWED_EMAILS`. Unlike Accanto, an admitted identity gets a User and
-  Workspace on its first sign-in, so there is no bootstrap step.
+  `OIDC_ALLOWED_EMAILS`.
+- `identity_setup_required`: no User exists for that exact issuer and subject.
+  Provision it from an orb with the owner credential (the subject is the user's
+  `user_id` in Auth0, such as `auth0|…`):
+
+  ```sh
+  PGSSLROOTCERT=/etc/ssl/certs/ca-certificates.crt DATABASE_URL="<owner asyncpg URL>" \
+  uv run python -m palinsesto.bootstrap --issuer "<OIDC_ISSUER>" --subject "<user_id>"
+  ```
 
 ### Spotify problems
 

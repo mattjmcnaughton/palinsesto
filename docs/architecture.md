@@ -16,7 +16,7 @@ integrations/ (provider transport and payload mapping, used by services)
 | --- | --- |
 | `domains/rotation.py` | The candidate engine (lanes and reasons), the weekly checks and week arithmetic. Plain dataclasses in, plain results out; no HTTP, database or clock. |
 | `services/access.py` | Browser sessions, `AuthenticatedActor`, and `owned_workspace`, which every Workspace operation goes through. API keys and MCP credentials will join here when Palinsesto copies Accanto's design. |
-| `services/browser_auth.py` | Login transactions, admission by email allowlist, first-sign-in provisioning of a User and Workspace. |
+| `services/browser_auth.py` | Login transactions and admission: an allowlisted email whose issuer and subject an operator provisioned. `bootstrap.py` provisions a User and its Workspace. |
 | `services/desk.py` | Reads and writes the desk. Each write locks the Workspace row, applies one change and returns the whole desk with candidates and checks. |
 | `services/spotify.py` | The Workspace's Spotify connection: sealed credentials, Connect, token refresh, sync, search, import and send. Stores blocking failures as safe error codes on the connection. |
 | `integrations/spotify.py` | `SpotifyAccounts` (authorize URL, token endpoint) and `SpotifyApi` (the Web API endpoints used). Maps every failure to a code in `ERRORS`. |

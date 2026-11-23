@@ -1,10 +1,22 @@
 # Git
 .git/
 .gitignore
+.agentic/
+.agents/
+.claude/
+.codex/
+private-data/
+palinsesto-prototype-*.json
+palinsesto-recovery.json
+**/test-results/
+**/playwright-report/
+**/coverage/
 
 # Python
 __pycache__/
+**/__pycache__/
 *.py[cod]
+**/*.py[cod]
 *$py.class
 *.egg-info/
 dist/
@@ -38,11 +50,23 @@ Thumbs.db
 # Environment
 .env
 .env.*
+**/.env
+**/.env.*
 !.env.example
 
 # SQLite
 *.db
 *.sqlite3
+*.sql
+*.dump
+*.backup
+**/*.db
+**/*.sqlite3
+**/*.sql
+**/*.dump
+**/*.backup
+**/palinsesto-prototype-*.json
+**/palinsesto-recovery.json
 
 # Docker
 Dockerfile
@@ -54,3 +78,13 @@ docker-compose.override.yml
 tests/
 docs/
 .github/
+
+# Storybook's static build and local agent media stay out of the build context;
+# the image builds only the app from src/ and copies its dist/.
+**/storybook-static/
+.amp/
+
+**/node_modules/
+**/dist/
+**/*.tsbuildinfo
+.ruff_cache/

@@ -20,6 +20,9 @@ dependencies = [
     "sqlalchemy[asyncio]>=2.0",
     "alembic>=1.13",
     "asyncpg>=0.29",
+    "authlib==1.7.2",
+    "httpx==0.28.1",
+    "cryptography>=45",
 ]
 
 [project.urls]
@@ -31,8 +34,9 @@ exclude-newer = "1 week"
 [dependency-groups]
 dev = [
     "pytest>=8.0",
+    "httpx>=0.28",
     "ruff>=0.8",
-    "ty>=0.12",
+    "ty>=0.0.54",
 ]
 
 [tool.ruff]
@@ -42,8 +46,19 @@ line-length = 88
 [tool.ruff.lint]
 select = ["E", "F", "I", "N", "W", "UP", "B", "A", "SIM", "TCH"]
 
+[tool.ruff.lint.per-file-ignores]
+"alembic/versions/*" = ["E501"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 markers = [
     "external: tests that hit external services",
 ]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/palinsesto"]
+exclude = ["src/palinsesto/web/frontend/**", "**/node_modules/**", "**/*.tsbuildinfo"]
+
+[tool.hatch.build]
+artifacts = ["src/palinsesto/web/frontend/dist/**"]
+exclude = ["**/node_modules/**", "**/*.tsbuildinfo"]

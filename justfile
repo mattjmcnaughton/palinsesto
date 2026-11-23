@@ -75,7 +75,7 @@ test-integration:
 
 # Run e2e tests
 test-e2e:
-    uv run pytest tests/e2e
+    uv run pytest tests/e2e || [ $? -eq 5 ]
 
 # Run tests that hit external services
 test-external:

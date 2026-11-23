@@ -1,0 +1,15 @@
+# Amp Box deployment. Migrations run separately with the owner credential;
+# this service only ever receives the restricted runtime DATABASE_URL.
+build: bash scripts/box-build.sh
+source: false
+artifacts: [box-release]
+services:
+  web:
+    cwd: box-release
+    env:
+      PYTHONPATH: site
+      PYTHONNOUSERSITE: "1"
+      PGSSLROOTCERT: site/certifi/cacert.pem
+    command: >-
+      sh -c 'BROWSER_ORIGIN="$AMP_DEPLOYMENT_URL" exec python/bin/python3 -m uvicorn
+      palinsesto.app:app --host 0.0.0.0 --port "$PORT" --no-access-log'

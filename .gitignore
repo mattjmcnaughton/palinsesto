@@ -34,9 +34,6 @@ Thumbs.db
 .env
 .env.local
 
-# Alembic
-alembic/versions/*.py
-!alembic/versions/.gitkeep
 
 # SQLite
 *.db
@@ -44,3 +41,28 @@ alembic/versions/*.py
 
 # Docker
 docker-compose.override.yml
+
+# Frontend
+node_modules/
+*.tsbuildinfo
+src/palinsesto/web/frontend/src/routeTree.gen.ts
+coverage/
+test-results/
+playwright-report/
+storybook-static/
+.ruff_cache/
+
+# Local agent plans and working notes
+/.agentic/
+/.amp/portals/
+
+# Private financial exports and recovery data must never enter version control.
+palinsesto-prototype-*.json
+palinsesto-recovery.json
+/private-data/
+.env.*
+!.env.example
+
+# Amp Box build output
+box-release/
+.box-build/

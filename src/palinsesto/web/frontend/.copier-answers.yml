@@ -1,0 +1,11 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: 72a28b9be899c6ccd39f06f8482d55e460556acd
+_src_path: ../../../../../templates/templates/frontend-react
+include_forms: false
+include_recharts: false
+include_shadcn: false
+include_tables: false
+include_zustand: false
+is_composed: true
+project_description: A radio programmer's desk for planning a weekly mix of whole albums.
+project_name: palinsesto

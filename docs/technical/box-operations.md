@@ -1,9 +1,10 @@
 # Running and debugging the deployment on an Amp Box
 
-**Status: not deployed.** `.amp/box.yaml` and `scripts/box-build.sh` are ready, but no
-`.amp/box-deploy.json`, Neon project or Auth0 application exists yet. This runbook
-follows Accanto's and Shelfmark's, so Palinsesto can join the shared Box
-`mattjmcnaughton/apps` as the `palinsesto` deployment once Matt decides to deploy.
+Palinsesto runs as the `palinsesto` deployment on the shared Amp Box
+`mattjmcnaughton/apps`, at https://palinsesto.mattjmcnaughton.com (the `onamp.dev`
+URL redirects there), with Neon PostgreSQL and Auth0 sign-in. It follows Accanto's
+and Shelfmark's runbooks. Sign-in is restricted to Matt: his email is the only one
+allowlisted, and only his Auth0 identity is provisioned.
 
 The deployment will hold a real listening history and Spotify credentials. Debug it
 from logs, health endpoints, schema state and provider metadata; none of them needs
@@ -15,8 +16,9 @@ to read catalog rows or connection secrets, and none should.
 | --- | --- | --- |
 | Build | The orb running `amp boxes deploy` | `scripts/box-build.sh` builds a relocatable CPython 3.12, the locked dependencies and the palinsesto wheel with the SPA into `box-release/`. No source, tests or fakes ship. |
 | Web service | Box `mattjmcnaughton/apps`, deployment `palinsesto`, service `web` | Defined in `.amp/box.yaml`. Uvicorn access logs are off, because Spotify's OAuth callback carries a one-time code in its query string. |
-| Database | Neon project `palinsesto` (to create) | `palinsesto_owner` runs migrations and never reaches the Box. `palinsesto_app` is the restricted runtime login in the Box's `DATABASE_URL`. |
-| Sign-in | Auth0 application "Palinsesto" (to create) | Callback `<deployment URL>/api/auth/callback`. |
+| Database | Neon project `palinsesto` (`icy-hat-58270909`, Postgres 16, 7-day restore window) | `palinsesto_owner` runs migrations and never reaches the Box. `palinsesto_app` is the restricted runtime login in the Box's `DATABASE_URL`. |
+| Sign-in | Auth0 application `palinsesto` | Regular web app, authorization code only. Callbacks for the custom domain and the `onamp.dev` URL. |
+| Deploy target | `.amp/box-deploy.json` | Box, deployment name, branch `main` and the custom domain. |
 | Spotify | Each Workspace owner's own Spotify developer app | Redirect URI `<deployment URL>/api/spotify/callback`, shown with a copy button in Settings. Palinsesto holds no Spotify app of its own. |
 
 Runtime configuration lives on the deployment, never in Git:

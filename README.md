@@ -6,7 +6,7 @@ Albums and artists are Palinsesto's own records. Spotify supplies your listening
 
 ## Status
 
-A first working build: sign-in with Auth0, a single-owner Workspace, the catalog, weeks, log book and rotation policy on Postgres, and the Spotify connection with an in-app setup guide. It is not deployed yet.
+A first working build: sign-in with Auth0, a single-owner Workspace, the catalog, weeks, log book and rotation policy on Postgres, and the Spotify connection with an in-app setup guide. It runs at https://palinsesto.mattjmcnaughton.com on an Amp Box, signed in to by Matt only; see [box-operations.md](docs/technical/box-operations.md).
 
 - `src/palinsesto/`: the FastAPI backend; `src/palinsesto/web/frontend/`: the React frontend and its Storybook.
 - `docs/plan.md`: decisions and delivery order. `CONTEXT.md`: the domain language.

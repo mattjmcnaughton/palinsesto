@@ -1,0 +1,10 @@
+{
+  "targets": {
+    "default": {
+      "on": "mattjmcnaughton/apps",
+      "name": "palinsesto",
+      "branch": "main",
+      "domain": "palinsesto.mattjmcnaughton.com"
+    }
+  }
+}
